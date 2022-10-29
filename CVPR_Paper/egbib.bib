@@ -1,0 +1,252 @@
+% Maintained by Guanying
+% Table of content
+
+@String(TPAMI  = {IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)})
+@String(IJCV  = {International Journal of Computer Vision (IJCV)})
+@String(TOG   = {ACM Transactions on Graphics (TOG)})
+@String(TIP   = {IEEE Transactions on Image Processing (TIP)})
+@String(TVCG  = {IEEE Transactions on Visualization and Computer Graphics (TVCG)})
+@String(TCSVT = {IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)})
+@String(TMM   =	{IEEE Transactions on Multimedia (TMM)})
+@String(PR = {Pattern Recognition (PR)})
+
+@String(CVPR  = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)})
+@String(ICCV  = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)})
+@String(ECCV  = {Proceedings of the European Conference on Computer Vision (ECCV)})
+@String(NIPS  = {Proceedings of the Advances in Neural Information Processing Systems (NeurIPS)})
+@String(ICPR  = {Proceedings of the International Conference on Pattern Recognition (ICPR)})
+@String(BMVC  =	{Proceedings of the British Machine Vision Conference (BMVC)})
+@String(ACMMM = {Proceedings of the ACM International Conference on Multimedia (ACM MM)})
+@String(ICME  =	{Proceedings of the IEEE International Conference on Multimedia & Expo (ICME)})
+@String(ICASSP=	{Proceedings of the International Conference on Acoustics, Speech, & Signal Processing (ICASSP)})
+@String(ICIP  = {Proceedings of the IEEE International Conference on Image Processing (ICIP)})
+@String(ACCV  = {Proceedings of the Asian Conference on Computer Vision (ACCV)})
+@String(WACV  = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)})
+@String(ICLR  = {Proceedings of the The International Conference on Learning Representations (ICLR)})
+@String(IJCAI = {Proceedings of the International Joint Conferences on Artificial Intelligence (IJCAI)})
+@String(AAAI = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)})
+@String(CVPRW= {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)})
+@String(ICCVW= {Proceedings of the IEEE International Conference on Computer Vision Workshops (ICCVW)})
+
+@string{ICML = {Proceedings of the ACM International Conference on Machine Learning (ICML)}}
+@string{SIGGRAPH = {Proceedings of the Annual Conference on Computer Graphics and Interactive Techniques (SIGGRAPH)}}
+@string{SIGGRAPHA= {Proceedings of the ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Aisa)}}
+
+@string{IROS = {Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}}
+
+
+% Table of contents
+
+% Update arxiv bib to conferece: 1. article->inproceedings; 2. journal->booktitle; 3. arxiv->conference
+
+@article{mildenhall2021nerf,
+  title={Nerf: Representing scenes as neural radiance fields for view synthesis},
+  author={Mildenhall, Ben and Srinivasan, Pratul P and Tancik, Matthew and Barron, Jonathan T and Ramamoorthi, Ravi and Ng, Ren},
+  journal={Communications of the ACM},
+  volume={65},
+  number={1},
+  pages={99--106},
+  year={2021},
+  publisher={ACM New York, NY, USA}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Related works - large-scale
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{zhang2022nerfusion,
+  title={NeRFusion: Fusing Radiance Fields for Large-Scale Scene Reconstruction},
+  author={Zhang, Xiaoshuai and Bi, Sai and Sunkavalli, Kalyan and Su, Hao and Xu, Zexiang},
+  pages={5449--5458},
+  year={2022},
+  booktitle=CVPR,
+}
+
+@inproceedings{rematas2022urban,
+  title={Urban radiance fields},
+  author={Rematas, Konstantinos and Liu, Andrew and Srinivasan, Pratul P and Barron, Jonathan T and Tagliasacchi, Andrea and Funkhouser, Thomas and Ferrari, Vittorio},
+  pages={12932--12942},
+  year={2022},
+  booktitle=CVPR,
+}
+
+@inproceedings{tancik2022block,
+  title={Block-nerf: Scalable large scene neural view synthesis},
+  author={Tancik, Matthew and Casser, Vincent and Yan, Xinchen and Pradhan, Sabeek and Mildenhall, Ben and Srinivasan, Pratul P and Barron, Jonathan T and Kretzschmar, Henrik},
+  pages={8248--8258},
+  year={2022},
+  booktitle=CVPR,
+}
+
+@inproceedings{turki2022mega,
+  title={Mega-NeRF: Scalable Construction of Large-Scale NeRFs for Virtual Fly-Throughs},
+  author={Turki, Haithem and Ramanan, Deva and Satyanarayanan, Mahadev},
+  pages={12922--12931},
+  year={2022},
+  booktitle=CVPR,
+}
+
+@inproceedings{xiangli2022bungeenerf,
+    title={BungeeNeRF: Progressive Neural Radiance Field for Extreme Multi-scale Scene Rendering},
+    author={Xiangli, Yuanbo and Xu, Linning and Pan, Xingang and Zhao, Nanxuan and Rao, Anyi and Theobalt, Christian and Dai, Bo and Lin, Dahua},
+    year={2022},
+    booktitle = ECCV,
+}
+
+@misc{google_earth_studio,
+	title = {Google Earth Studio},
+	howpublished = {\url{https://earth.google.com/studio/}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Related works - fast rendering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{liu2020neural,
+  title={Neural sparse voxel fields},
+  author={Liu, Lingjie and Gu, Jiatao and Zaw Lin, Kyaw and Chua, Tat-Seng and Theobalt, Christian},
+  journal=NIPS,
+  volume={33},
+  pages={15651--15663},
+  year={2020}
+}
+
+@inproceedings{yu2021plenoctrees,
+  title={Plenoctrees for real-time rendering of neural radiance fields},
+  author={Yu, Alex and Li, Ruilong and Tancik, Matthew and Li, Hao and Ng, Ren and Kanazawa, Angjoo},
+  booktitle=ICCV,
+  pages={5752--5761},
+  year={2021}
+}
+
+@inproceedings{hedman2021baking,
+  title={Baking neural radiance fields for real-time view synthesis},
+  author={Hedman, Peter and Srinivasan, Pratul P and Mildenhall, Ben and Barron, Jonathan T and Debevec, Paul},
+  booktitle=ICCV,
+  pages={5875--5884},
+  year={2021}
+}
+
+
+@inproceedings{wu2022diver,
+  title={Diver: Real-time and accurate neural radiance fields with deterministic integration for volume rendering},
+  author={Wu, Liwen and Lee, Jae Yong and Bhattad, Anand and Wang, Yu-Xiong and Forsyth, David},
+  booktitle=CVPR,
+  pages={16200--16209},
+  year={2022}
+}
+
+@inproceedings{reiser2021kilonerf,
+  title={Kilonerf: Speeding up neural radiance fields with thousands of tiny mlps},
+  author={Reiser, Christian and Peng, Songyou and Liao, Yiyi and Geiger, Andreas},
+  booktitle=ICCV,
+  pages={14335--14345},
+  year={2021}
+}
+
+@inproceedings{garbin2021fastnerf,
+  title={Fastnerf: High-fidelity neural rendering at 200fps},
+  author={Garbin, Stephan J and Kowalski, Marek and Johnson, Matthew and Shotton, Jamie and Valentin, Julien},
+  booktitle=ICCV,
+  pages={14346--14355},
+  year={2021}
+}
+
+@inproceedings{wizadwongsa2021nex,
+  title={Nex: Real-time view synthesis with neural basis expansion},
+  author={Wizadwongsa, Suttisak and Phongthawee, Pakkapon and Yenphraphai, Jiraphon and Suwajanakorn, Supasorn},
+  booktitle=CVPR,
+  pages={8534--8543},
+  year={2021}
+}
+
+@inproceedings{neff2021donerf,
+  title={DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks},
+  author={Neff, Thomas and Stadlbauer, Pascal and Parger, Mathias and Kurz, Andreas and Mueller, Joerg H and Chaitanya, Chakravarty R Alla and Kaplanyan, Anton and Steinberger, Markus},
+  booktitle={Computer Graphics Forum},
+  volume={40},
+  number={4},
+  pages={45--59},
+  year={2021},
+  organization={Wiley Online Library}
+}
+
+@inproceedings{wang2022fourier,
+  title={Fourier PlenOctrees for Dynamic Radiance Field Rendering in Real-time},
+  author={Wang, Liao and Zhang, Jiakai and Liu, Xinhang and Zhao, Fuqiang and Zhang, Yanshun and Zhang, Yingliang and Wu, Minye and Yu, Jingyi and Xu, Lan},
+  booktitle=CVPR,
+  pages={13524--13534},
+  year={2022}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Related works - optimization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@inproceedings{guo2022neural,
+  title={Neural 3D Scene Reconstruction with the Manhattan-world Assumption},
+  author={Guo, Haoyu and Peng, Sida and Lin, Haotong and Wang, Qianqian and Zhang, Guofeng and Bao, Hujun and Zhou, Xiaowei},
+  booktitle=CVPR,
+  pages={5511--5520},
+  year={2022}
+}
+
+@inproceedings{hu2022efficientnerf,
+  title={EfficientNeRF Efficient Neural Radiance Fields},
+  author={Hu, Tao and Liu, Shu and Chen, Yilun and Shen, Tiancheng and Jia, Jiaya},
+  booktitle=CVPR,
+  pages={12902--12911},
+  year={2022}
+}
+
+@article{muller2022instant,
+  title={Instant neural graphics primitives with a multiresolution hash encoding},
+  author={M{\"u}ller, Thomas and Evans, Alex and Schied, Christoph and Keller, Alexander},
+  journal={arXiv preprint arXiv:2201.05989},
+  year={2022}
+}
+
+@inproceedings{sun2022direct,
+  title={Direct voxel grid optimization: Super-fast convergence for radiance fields reconstruction},
+  author={Sun, Cheng and Sun, Min and Chen, Hwann-Tzong},
+  booktitle=CVPR,
+  pages={5459--5469},
+  year={2022}
+}
+
+@article{lombardi2021mixture,
+  title={Mixture of volumetric primitives for efficient neural rendering},
+  author={Lombardi, Stephen and Simon, Tomas and Schwartz, Gabriel and Zollhoefer, Michael and Sheikh, Yaser and Saragih, Jason},
+  journal=TOG,
+  volume={40},
+  number={4},
+  pages={1--13},
+  year={2021},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{xu2022point,
+  title={Point-nerf: Point-based neural radiance fields},
+  author={Xu, Qiangeng and Xu, Zexiang and Philip, Julien and Bi, Sai and Shu, Zhixin and Sunkavalli, Kalyan and Neumann, Ulrich},
+  booktitle=CVPR,
+  pages={5438--5448},
+  year={2022}
+}
+
+@inproceedings{fridovich2022plenoxels,
+  title={Plenoxels: Radiance Fields Without Neural Networks},
+  author={Fridovich-Keil, Sara and Yu, Alex and Tancik, Matthew and Chen, Qinhong and Recht, Benjamin and Kanazawa, Angjoo},
+  booktitle=CVPR,
+  pages={5501--5510},
+  year={2022}
+}
+
+@article{chen2022tensorf,
+  title={TensoRF: Tensorial Radiance Fields},
+  author={Chen, Anpei and Xu, Zexiang and Geiger, Andreas and Yu, Jingyi and Su, Hao},
+  journal={arXiv preprint arXiv:2203.09517},
+  year={2022}
+}
+

@@ -1,0 +1,1864 @@
+% Maintained by Guanying
+% Table of content
+% Sat Feb 19 13:43:52 CST 2022
+%%%% Sec. References for NeRF
+%%%%%%%%% Subsec. NeRF Performance
+%%%%%%%%% Subsec. NeRF Surface Modeling
+%%%%%%%%% Subsec. NeRF Generalization 
+%%%%%%%%% Subsec. NeRF Real-Time 
+%%%%%%%%% Subsec. NeRF Dynamic 
+%%%%%%%%% Subsec. NeRF human 
+%%%%%%%%% Subsec. NeRF Decomposition 
+%%%%%%%%% Subsec. NeRF Relex Assumptions 
+%%%%%%%%% Subsec. NeRF Downstream problems 
+%%%%%%%%% Subsec. Neural Rendering 
+%%%% Sec. Novel-view Synthesis 
+%%%% Sec. Software 
+%%%% Sec. Dataset 
+%%%% Sec. Image Processing, Evaluation Metrics 
+%%%% Sec. Neural Network Architecture 
+%%%% Sec. Optimization Method, Solver 
+%%%% Sec. Depth, Disparity, Flow Normal Related 
+%%%%%%%%% Subsec. Depth 
+%%%%%%%%% Subsec. Normal 
+%%%%%%%%% Subsec. Flow 
+%%%% Sec. Photometry 
+%%%%%%%%% Subsec. Shape from Shading / Inverse Rendering 
+%%%%%%%%% Subsec. Photometric Stereo Survey and Dataset 
+%%%%%%%%% Subsec. Calibrated Photometric Stereo 
+%%%%%%%%% Subsec. Uncalibrated Photometric Stereo 
+%%%%%%%%% Subsec. Multi-view Photometric Stereo 
+%%%%%%%%% Subsec. Photometric Stereo under Natural Illumination 
+%%%%%%%%% Subsec. Light Calibration 
+%%%% Sec. Illumination Estimation 
+%%%% Sec. Multi-view Reconstruction 
+%%%% Sec. Mesh Reconstruction 
+%%%% Sec. Environment Matting 
+
+
+@String(TPAMI  = {IEEE Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)})
+@String(IJCV  = {International Journal of Computer Vision (IJCV)})
+@String(TOG   = {ACM Transactions on Graphics (TOG)})
+@String(TIP   = {IEEE Transactions on Image Processing (TIP)})
+@String(TVCG  = {IEEE Transactions on Visualization and Computer Graphics (TVCG)})
+@String(TCSVT = {IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)})
+@String(TMM   =	{IEEE Transactions on Multimedia (TMM)})
+@String(PR = {Pattern Recognition (PR)})
+
+@String(CVPR  = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)})
+@String(ICCV  = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)})
+@String(ECCV  = {Proceedings of the European Conference on Computer Vision (ECCV)})
+@String(NIPS  = {Proceedings of the Advances in Neural Information Processing Systems (NeurIPS)})
+@String(ICPR  = {Proceedings of the International Conference on Pattern Recognition (ICPR)})
+@String(BMVC  =	{Proceedings of the British Machine Vision Conference (BMVC)})
+@String(ACMMM = {Proceedings of the ACM International Conference on Multimedia (ACM MM)})
+@String(ICME  =	{Proceedings of the IEEE International Conference on Multimedia & Expo (ICME)})
+@String(ICASSP=	{Proceedings of the International Conference on Acoustics, Speech, & Signal Processing (ICASSP)})
+@String(ICIP  = {Proceedings of the IEEE International Conference on Image Processing (ICIP)})
+@String(ACCV  = {Proceedings of the Asian Conference on Computer Vision (ACCV)})
+@String(WACV  = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)})
+@String(ICLR  = {Proceedings of the The International Conference on Learning Representations (ICLR)})
+@String(IJCAI = {Proceedings of the International Joint Conferences on Artificial Intelligence (IJCAI)})
+@String(AAAI = {Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)})
+@String(CVPRW= {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)})
+@String(ICCVW= {Proceedings of the IEEE International Conference on Computer Vision Workshops (ICCVW)})
+
+@string{ICML = {Proceedings of the ACM International Conference on Machine Learning (ICML)}}
+@string{SIGGRAPH = {Proceedings of the Annual Conference on Computer Graphics and Interactive Techniques (SIGGRAPH)}}
+@string{SIGGRAPHA= {Proceedings of the ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia (SIGGRAPH Aisa)}}
+
+@string{IROS = {Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}}
+
+
+% Table of contents
+
+% Update arxiv bib to conferece: 1. article->inproceedings; 2. journal->booktitle; 3. arxiv->conference
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. References for NeRF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{mildenhall2020_nerf_eccv20,
+  title={{NeRF}: Representing scenes as neural radiance fields for view synthesis},
+  author={Mildenhall, Ben and Srinivasan, Pratul P and Tancik, Matthew and Barron, Jonathan T and Ramamoorthi, Ravi and Ng, Ren},
+  booktitle=ECCV,
+  pages={405--421},
+  year={2020},
+}
+
+%%%%%%%%% Subsec. NeRF Performance
+@article{sitzmann2019scene,
+  title={Scene representation networks: Continuous 3d-structure-aware neural scene representations},
+  author={Sitzmann, Vincent and Zollh{\"o}fer, Michael and Wetzstein, Gordon},
+  journal=NIPS,
+  volume={32},
+  year={2019}
+}
+
+@article{Zhang20arxiv_nerf++,
+	Title = {{NeRF++}: Analyzing and Improving Neural Radiance Fields},
+	Author = {Kai Zhang and Gernot Riegler and Noah Snavely and Vladlen Koltun},
+    journal={arXiv preprint arXiv:2010.07492},
+	Year = {2020}
+}
+
+@inproceedings{martin2021_nerfw_cvpr21,
+  title={{NeRF} in the Wild: Neural radiance fields for unconstrained photo collections},
+  author={Martin-Brualla, Ricardo and Radwan, Noha and Sajjadi, Mehdi SM and Barron, Jonathan T and Dosovitskiy, Alexey and Duckworth, Daniel},
+  pages={7210--7219},
+  booktitle=CVPR,
+  year={2021}
+}
+@inproceedings{barron2021mip,
+  title={{Mip-NeRF}: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields},
+  author={Barron, Jonathan T and Mildenhall, Ben and Tancik, Matthew and Hedman, Peter and Martin-Brualla, Ricardo and Srinivasan, Pratul P},
+  booktitle=ICCV,
+  year={2021}
+}
+
+%%%%%%%%% Subsec. NeRF Surface Modeling
+@incollection{wang2009all,
+  title={All-frequency rendering of dynamic, spatially-varying reflectance},
+  author={Wang, Jiaping and Ren, Peiran and Gong, Minmin and Snyder, John and Guo, Baining},
+  booktitle=SIGGRAPHA,
+  pages={1--10},
+  year={2009}
+}
+@inproceedings{mescheder2019occupancy,
+  title={Occupancy networks: Learning 3d reconstruction in function space},
+  author={Mescheder, Lars and Oechsle, Michael and Niemeyer, Michael and Nowozin, Sebastian and Geiger, Andreas},
+  booktitle=CVPR,
+  pages={4460--4470},
+  year={2019}
+}
+@inproceedings{chen2019learning,
+  title={Learning implicit fields for generative shape modeling},
+  author={Chen, Zhiqin and Zhang, Hao},
+  booktitle=CVPR,
+  pages={5939--5948},
+  year={2019}
+}
+@inproceedings{park2019deepsdf,
+  title={{DeepSDF}: Learning continuous signed distance functions for shape representation},
+  author={Park, Jeong Joon and Florence, Peter and Straub, Julian and Newcombe, Richard and Lovegrove, Steven},
+  booktitle=CVPR,
+  pages={165--174},
+  year={2019}
+}
+@inproceedings{yariv2020multiview,
+  title={Multiview neural surface reconstruction by disentangling geometry and appearance},
+  author={Yariv, Lior and Kasten, Yoni and Moran, Dror and Galun, Meirav and Atzmon, Matan and Basri, Ronen and Lipman, Yaron},
+  booktitle=NIPS,
+  volume={33},
+  pages={2492--2502},
+  year={2020}
+}
+@inproceedings{niemeyer2020differentiable,
+  title={Differentiable volumetric rendering: Learning implicit 3d representations without 3d supervision},
+  author={Niemeyer, Michael and Mescheder, Lars and Oechsle, Michael and Geiger, Andreas},
+  booktitle=CVPR,
+  pages={3504--3515},
+  year={2020}
+}
+@inproceedings{oechsle2021unisurf,
+  title={{UNISURF}: Unifying neural implicit surfaces and radiance fields for multi-view reconstruction},
+  author={Oechsle, Michael and Peng, Songyou and Geiger, Andreas},
+  booktitle=ICCV,
+  pages={5589--5599},
+  year={2021}
+}
+@inproceedings{wang2021neus,
+  title={{NeuS}: Learning Neural Implicit Surfaces by Volume Rendering for Multi-view Reconstruction},
+  author={Wang, Peng and Liu, Lingjie and Liu, Yuan and Theobalt, Christian and Komura, Taku and Wang, Wenping},
+  booktitle=NIPS,
+  volume={34},
+  year={2021}
+}
+%%%%%%%%% Subsec. NeRF Generalization 
+
+@inproceedings{trevithick_grf_arxiv,
+  title={{GRF}: Learning a general radiance field for 3d scene representation and rendering},
+  author={Trevithick, Alex and Yang, Bo},
+  booktitle=ICCV,
+  year={2021}
+}
+
+@article{gao2020_portrait_arxiv,
+  title={Portrait neural radiance fields from a single image},
+  author={Gao, Chen and Shih, Yichang and Lai, Wei-Sheng and Liang, Chia-Kai and Huang, Jia-Bin},
+  journal={arXiv preprint arXiv:2012.05903},
+  year={2020}
+}
+
+@inproceedings{yu2021_pixelnerf_cvpr21,
+  title={{pixelNeRF}: Neural radiance fields from one or few images},
+  author={Yu, Alex and Ye, Vickie and Tancik, Matthew and Kanazawa, Angjoo},
+  booktitle=CVPR,
+  year={2021}
+}
+
+@article{rematas2021_sharf_arxiv,
+  title={Sharf: Shape-conditioned radiance fields from a single view},
+  author={Rematas, Konstantinos and Martin-Brualla, Ricardo and Ferrari, Vittorio},
+  journal=ICML,
+  year={2021}
+}
+
+@inproceedings{raj2021_pixel_cvpr21,
+  title={Pixel-Aligned Volumetric Avatars},
+  author={Raj, Amit and Zollhofer, Michael and Simon, Tomas and Saragih, Jason and Saito, Shunsuke and Hays, James and Lombardi, Stephen},
+  booktitle=CVPR,
+  year={2021}
+}
+
+@inproceedings{wang2021_ibrnet_cvpr21,
+  title={{IBRNet}: Learning multi-view image-based rendering},
+  author={Wang, Qianqian and Wang, Zhicheng and Genova, Kyle and Srinivasan, Pratul P and Zhou, Howard and Barron, Jonathan T and Martin-Brualla, Ricardo and Snavely, Noah and Funkhouser, Thomas},
+  booktitle=CVPR,
+  year={2021}
+}
+@inproceedings{chen2021mvsnerf,
+  title={{MVSNerf}: Fast generalizable radiance field reconstruction from multi-view stereo},
+  author={Chen, Anpei and Xu, Zexiang and Zhao, Fuqiang and Zhang, Xiaoshuai and Xiang, Fanbo and Yu, Jingyi and Su, Hao},
+  booktitle=ICCV,
+  pages={14124--14133},
+  year={2021}
+}
+%%%%%%%%% Subsec. NeRF Real-Time 
+
+@inproceedings{liu2020_nsvf_nips20,
+  title={Neural Sparse Voxel Fields},
+  author={Liu, Lingjie and Gu, Jiatao and Lin, Kyaw Zaw and Chua, Tat-Seng and Theobalt, Christian},
+  booktitle=NIPS,
+  volume={33},
+  pages={15651--15663},
+  year={2020}
+}
+
+@article {neff2021_donerf_egsr21,
+  title = {{DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks}},
+  author = {Neff, Thomas and Stadlbauer, Pascal and Parger, Mathias and Kurz, Andreas and Mueller, Joerg H. and Chaitanya, Chakravarty R. Alla and Kaplanyan, Anton S. and Steinberger, Markus},
+  journal = {Computer Graphics Forum},
+  year = {2021},
+}
+
+@inproceedings{Reiser2021_kiloNeRF_iccv21,
+  author = {Christian Reiser and Songyou Peng and Yiyi Liao and Andreas Geiger},
+  title = {{KiloNeRF}: Speeding up Neural Radiance Fields with Thousands of Tiny MLPs},
+  booktitle = ICCV,
+  pages={14335--14345},
+  year = {2021}
+}
+
+@inproceedings{garbin2021_fastnerf_arxiv,
+  title={{FastNeRF}: High-fidelity neural rendering at 200fps},
+  author={Garbin, Stephan J and Kowalski, Marek and Johnson, Matthew and Shotton, Jamie and Valentin, Julien},
+  booktitle=ICCV,
+  pages={14346--14355},
+  year={2021}
+}
+
+@inproceedings{lindell2021_autoint_cvpr21,
+  title={{AutoInt}: Automatic integration for fast neural volume rendering},
+  author={Lindell, David B and Martel, Julien NP and Wetzstein, Gordon},
+  booktitle=CVPR,
+  year={2021}
+}
+
+@inproceedings{yu2021_plenoctrees_arxiv,
+  title={Plenoctrees for real-time rendering of neural radiance fields},
+  author={Yu, Alex and Li, Ruilong and Tancik, Matthew and Li, Hao and Ng, Ren and Kanazawa, Angjoo},
+  booktitle=ICCV,
+  pages={5752--5761},
+  year={2021}
+}
+
+@article{lombardi2021_mixture_arxiv,
+  title={Mixture of volumetric primitives for efficient neural rendering},
+  author={Lombardi, Stephen and Simon, Tomas and Schwartz, Gabriel and Zollhoefer, Michael and Sheikh, Yaser and Saragih, Jason},
+  journal=TOG,
+  year={2021}
+}
+
+@article{sun2021direct,
+  title={{Direct Voxel Grid Optimization}: Super-fast Convergence for Radiance Fields Reconstruction},
+  author={Sun, Cheng and Sun, Min and Chen, Hwann-Tzong},
+  journal={arXiv preprint arXiv:2111.11215},
+  year={2021}
+}
+@article{yu2021plenoxels,
+  title={Plenoxels: Radiance Fields without Neural Networks},
+  author={Yu, Alex and Fridovich-Keil, Sara and Tancik, Matthew and Chen, Qinhong and Recht, Benjamin and Kanazawa, Angjoo},
+  journal={arXiv preprint arXiv:2112.05131},
+  year={2021}
+}
+@article{muller2022instant,
+  title={Instant Neural Graphics Primitives with a Multiresolution Hash Encoding},
+  author={M{\"u}ller, Thomas and Evans, Alex and Schied, Christoph and Keller, Alexander},
+  journal={arXiv preprint arXiv:2201.05989},
+  year={2022}
+}
+%%%%%%%%% Subsec. NeRF Dynamic 
+@inproceedings{niemeyer2019occupancy,
+  title={Occupancy flow: 4d reconstruction by learning particle dynamics},
+  author={Niemeyer, Michael and Mescheder, Lars and Oechsle, Michael and Geiger, Andreas},
+  booktitle=ICCV,
+  pages={5379--5389},
+  year={2019}
+}
+@article{Lombardi2019,
+  author = {Lombardi, Stephen and Simon, Tomas and Saragih, Jason and Schwartz, Gabriel and Lehrmann, Andreas and Sheikh, Yaser},
+  title = {Neural Volumes: Learning Dynamic Renderable Volumes from Images},
+  journal = TOG,
+  volume = {38},
+  number = {4},
+  year = {2019},
+  pages = {65:1--65:14},
+} 
+@inproceedings{li2021_nsff_cvpr21,
+  title={Neural scene flow fields for space-time view synthesis of dynamic scenes},
+  author={Li, Zhengqi and Niklaus, Simon and Snavely, Noah and Wang, Oliver},
+  booktitle=CVPR,
+  pages={6498--6508},
+  year={2021}
+}
+
+@inproceedings{du2021_nerflow_iccv21,
+  title     = {Neural Radiance Flow for 4D View Synthesis and Video Processing},
+  author    = {Yilun Du and Yinan Zhang and Hong-Xing Yu and Joshua B. Tenenbaum and Jiajun Wu},
+  year      = {2021},
+  pages={14324--14334},
+  booktitle = ICCV,
+}
+
+@inproceedings{gao2021_dynamic_arxiv,
+  title={Dynamic View Synthesis from Dynamic Monocular Video},
+  author={Gao, Chen and Saraf, Ayush and Kopf, Johannes and Huang, Jia-Bin},
+  booktitle=ICCV,
+  year={2021}
+}
+
+@inproceedings{rebain2021_derf_cvpr21,
+  title={Derf: Decomposed radiance fields},
+  author={Rebain, Daniel and Jiang, Wei and Yazdani, Soroosh and Li, Ke and Yi, Kwang Moo and Tagliasacchi, Andrea},
+  booktitle=CVPR,
+  year={2021}
+}
+
+@inproceedings{yoon2020_nvidiadataset_cvpr20,
+  title={Novel view synthesis of dynamic scenes with globally coherent depths from a monocular camera},
+  author={Yoon, Jae Shin and Kim, Kihwan and Gallo, Orazio and Park, Hyun Soo and Kautz, Jan},
+  booktitle=CVPR,
+  year={2020}
+}
+
+@article{wang2021_dctnerf_arxiv,
+  title={Neural Trajectory Fields for Dynamic Novel View Synthesis},
+  author={Wang, Chaoyang and Eckart, Ben and Lucey, Simon and Gallo, Orazio},
+  journal={arXiv preprint arXiv:2105.05994},
+  year={2021}
+}
+
+@inproceedings{xian2021_space_cvpr21,
+  title={Space-time neural irradiance fields for free-viewpoint video},
+  author={Xian, Wenqi and Huang, Jia-Bin and Kopf, Johannes and Kim, Changil},
+  booktitle=CVPR,
+  year={2021}
+}
+
+@inproceedings{tretschk2020_nonrigid_arxiv,
+  title={Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video},
+  author={Tretschk, Edgar and Tewari, Ayush and Golyanik, Vladislav and Zollh{\"o}fer, Michael and Lassner, Christoph and Theobalt, Christian},
+  booktitle=ICCV,
+  pages={12959--12970},
+  year={2021}
+}
+
+@inproceedings{park2021_nerfies_iccv21,
+  author={Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M and Martin-Brualla, Ricardo},
+  title={Nerfies: Deformable Neural Radiance Fields},
+  booktitle=ICCV,
+  pages={5865--5874},
+  year={2021},
+}
+
+@inproceedings{pumarola2021_dnerf_cvpr21,
+  title={{D-NeRF}: Neural radiance fields for dynamic scenes},
+  author={Pumarola, Albert and Corona, Enric and Pons-Moll, Gerard and Moreno-Noguer, Francesc},
+  booktitle=CVPR,
+  pages={10318--10327},
+  year={2021}
+}
+
+@article{zhang2021_editable_stnerf,
+  title={Editable free-viewpoint video using a layered neural representation},
+  author={Zhang, Jiakai and Liu, Xinhang and Ye, Xinyi and Zhao, Fuqiang and Zhang, Yanshun and Wu, Minye and Zhang, Yingliang and Xu, Lan and Yu, Jingyi},
+  journal=TOG,
+  year={2021},
+}
+@article{park2021hypernerf,
+  title={{HyperNeRF}: A higher-dimensional representation for topologically varying neural radiance fields},
+  author={Park, Keunhong and Sinha, Utkarsh and Hedman, Peter and Barron, Jonathan T and Bouaziz, Sofien and Goldman, Dan B and Martin-Brualla, Ricardo and Seitz, Steven M},
+  journal=TOG,
+  publisher = {ACM},
+  volume = {40},
+  number = {6},
+  pages={1--12},
+  year={2021},
+}
+%%%%%%%%% Subsec. NeRF human 
+@inproceedings{peng2021neural,
+  title={{Neural Body}: Implicit neural representations with structured latent codes for novel view synthesis of dynamic humans},
+  author={Peng, Sida and Zhang, Yuanqing and Xu, Yinghao and Wang, Qianqian and Shuai, Qing and Bao, Hujun and Zhou, Xiaowei},
+  booktitle=CVPR,
+  pages={9054--9063},
+  year={2021}
+}
+@inproceedings{peng2021animatable,
+  title={Animatable neural radiance fields for modeling dynamic human bodies},
+  author={Peng, Sida and Dong, Junting and Wang, Qianqian and Zhang, Shangzhan and Shuai, Qing and Zhou, Xiaowei and Bao, Hujun},
+  booktitle=ICCV,
+  pages={14314--14323},
+  year={2021}
+}
+@article{liu2021neural,
+  title={{Neural Actor}: Neural Free-view Synthesis of Human Actors with Pose Control},
+  author={Liu, Lingjie and Habermann, Marc and Rudnev, Viktor and Sarkar, Kripasindhu and Gu, Jiatao and Theobalt, Christian},
+  journal=TOG,
+  volume={40},
+  number={6},
+  pages={1--16},
+  year={2021}
+}
+%%%%%%%%% Subsec. NeRF Decomposition 
+@article{bi2020neural,
+  title={Neural reflectance fields for appearance acquisition},
+  author={Bi, Sai and Xu, Zexiang and Srinivasan, Pratul and Mildenhall, Ben and Sunkavalli, Kalyan and Ha{\v{s}}an, Milo{\v{s}} and Hold-Geoffroy, Yannick and Kriegman, David and Ramamoorthi, Ravi},
+  journal={arXiv preprint arXiv:2008.03824},
+  year={2020}
+}
+@inproceedings{zhang2021physg,
+  title={{PhySG}: Inverse Rendering with Spherical Gaussians for Physics-based Material Editing and Relighting},
+  author={Zhang, Kai and Luan, Fujun and Wang, Qianqian and Bala, Kavita and Snavely, Noah},
+  booktitle=CVPR,
+  pages={5453--5462},
+  year={2021}
+}
+@inproceedings{boss2021nerd,
+  title={{NeRD}: Neural reflectance decomposition from image collections},
+  author={Boss, Mark and Braun, Raphael and Jampani, Varun and Barron, Jonathan T and Liu, Ce and Lensch, Hendrik},
+  booktitle=ICCV,
+  pages={12684--12694},
+  year={2021}
+}
+@article{zhang2021nerfactor,
+  title={{NeRFactor}: Neural Factorization of Shape and Reflectance Under an Unknown Illumination},
+  author={Zhang, Xiuming and Srinivasan, Pratul P and Deng, Boyang and Debevec, Paul and Freeman, William T and Barron, Jonathan T},
+  journal=TOG,
+  volume = {40},
+  number = {6},
+  year={2021}
+}
+@inproceedings{boss2021neural,
+  title={{Neural-PIL}: Neural Pre-Integrated Lighting for Reflectance Decomposition},
+  author={Boss, Mark and Jampani, Varun and Braun, Raphael and Liu, Ce and Barron, Jonathan and Lensch, Hendrik},
+  booktitle=NIPS,
+  volume={34},
+  year={2021}
+}
+@inproceedings{srinivasan2021nerv,
+  title={{NeRV}: Neural reflectance and visibility fields for relighting and view synthesis},
+  author={Srinivasan, Pratul P and Deng, Boyang and Zhang, Xiuming and Tancik, Matthew and Mildenhall, Ben and Barron, Jonathan T},
+  booktitle=CVPR,
+  pages={7495--7504},
+  year={2021}
+}
+@inproceedings{xiang2021neutex,
+  title={{NeuTex}: Neural Texture Mapping for Volumetric Neural Rendering},
+  author={Xiang, Fanbo and Xu, Zexiang and Hasan, Milos and Hold-Geoffroy, Yannick and Sunkavalli, Kalyan and Su, Hao},
+  booktitle=CVPR,
+  pages={7119--7128},
+  year={2021}
+}
+@article{verbin2021ref,
+  title={{Ref-NeRF}: Structured View-Dependent Appearance for Neural Radiance Fields},
+  author={Verbin, Dor and Hedman, Peter and Mildenhall, Ben and Zickler, Todd and Barron, Jonathan T and Srinivasan, Pratul P},
+  journal={arXiv preprint arXiv:2112.03907},
+  year={2021}
+}
+%%%%%%%%% Subsec. NeRF Relex Assumptions 
+
+@article{wang2021_nerfminus_arix,
+  title={{NeRF--}: Neural Radiance Fields Without Known Camera Parameters},
+  author={Wang, Zirui and Wu, Shangzhe and Xie, Weidi and Chen, Min and Prisacariu, Victor Adrian},
+  journal={arXiv preprint arXiv:2102.07064},
+  year={2021}
+}
+
+%%%%%%%%% Subsec. NeRF Downstream problems 
+
+@inproceedings{yen2020_inerf_arxiv,
+  title={{iNeRF}: Inverting Neural Radiance Fields for Pose Estimation},
+  author={Yen-Chen, Lin and Florence, Pete and Barron, Jonathan T and Rodriguez, Alberto and Isola, Phillip and Lin, Tsung-Yi},
+  booktitle=IROS,
+  year={2021}
+}
+
+%%%%%%%%% Subsec. Neural Rendering 
+@inproceedings{wood2000surface,
+  title={Surface light fields for 3D photography},
+  author={Wood, Daniel N and Azuma, Daniel I and Aldinger, Ken and Curless, Brian and Duchamp, Tom and Salesin, David H and Stuetzle, Werner},
+  booktitle=SIGGRAPHA,
+  pages={287--296},
+  year={2000}
+}
+@inproceedings{buehler2001_unstructured,
+  title={Unstructured lumigraph rendering},
+  author={Buehler, Chris and Bosse, Michael and McMillan, Leonard and Gortler, Steven and Cohen, Michael},
+  booktitle={Proceedings of the 28th annual conference on Computer graphics and interactive techniques},
+  year={2001}
+}
+
+@inproceedings{shum2000review,
+  title={Review of image-based rendering techniques},
+  author={Shum, Harry and Kang, Sing Bing},
+  booktitle={Visual Communications and Image Processing 2000},
+  year={2000},
+}
+
+@article{thies2019_deferred_tog19,
+  title={Deferred neural rendering: Image synthesis using neural textures},
+  author={Thies, Justus and Zollh{\"o}fer, Michael and Nie{\ss}ner, Matthias},
+  journal=TOG,
+  year={2019},
+}
+
+@inproceedings{tewari2020state,
+  title={State of the art on neural rendering},
+  author={Tewari, Ayush and Fried, Ohad and Thies, Justus and Sitzmann, Vincent and Lombardi, Stephen and Sunkavalli, Kalyan and Martin-Brualla, Ricardo and Simon, Tomas and Saragih, Jason and Nie{\ss}ner, Matthias and others},
+  booktitle={Computer Graphics Forum},
+  year={2020},
+}
+@article{tewari2021advances,
+  title={Advances in neural rendering},
+  author={Tewari, Ayush and Thies, Justus and Mildenhall, Ben and Srinivasan, Pratul and Tretschk, Edgar and Wang, Yifan and Lassner, Christoph and Sitzmann, Vincent and Martin-Brualla, Ricardo and Lombardi, Stephen and others},
+  journal={arXiv preprint arXiv:2111.05849},
+  year={2021}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Novel-view Synthesis 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{flynn2016_deepstereo_cvpr16,
+  title={{DeepStereo}: Learning to predict new views from the world's imagery},
+  author={Flynn, John and Neulander, Ivan and Philbin, James and Snavely, Noah},
+  booktitle=CVPR,
+  year={2016}
+}
+
+@article{xu2019_deep_tog19,
+  title={Deep view synthesis from sparse photometric images},
+  author={Xu, Zexiang and Bi, Sai and Sunkavalli, Kalyan and Hadap, Sunil and Su, Hao and Ramamoorthi, Ravi},
+  journal=ToG,
+  year={2019},
+}
+
+@inproceedings{flynn2019_deepview_cvpr19,
+  title={Deepview: View synthesis with learned gradient descent},
+  author={Flynn, John and Broxton, Michael and Debevec, Paul and DuVall, Matthew and Fyffe, Graham and Overbeck, Ryan and Snavely, Noah and Tucker, Richard},
+  booktitle=CVPR,
+  year={2019}
+}
+
+@article{mildenhall2019_local_tog19,
+  title={Local light field fusion: Practical view synthesis with prescriptive sampling guidelines},
+  author={Mildenhall, Ben and Srinivasan, Pratul P and Ortiz-Cayon, Rodrigo and Kalantari, Nima Khademi and Ramamoorthi, Ravi and Ng, Ren and Kar, Abhishek},
+  journal=TOG,
+  year={2019},
+}
+
+@inproceedings{srinivasan2019_pushing_cvpr19,
+  title={Pushing the boundaries of view extrapolation with multiplane images},
+  author={Srinivasan, Pratul P and Tucker, Richard and Barron, Jonathan T and Ramamoorthi, Ravi and Ng, Ren and Snavely, Noah},
+  booktitle=CVPR,
+  year={2019}
+}
+
+@article{zhou2018_stereo_tog18,
+  title={Stereo magnification: learning view synthesis using multiplane images},
+  author={Zhou, Tinghui and Tucker, Richard and Flynn, John and Fyffe, Graham and Snavely, Noah},
+  journal=TOG,
+  year={2018},
+}
+
+@inproceedings{choi2019_extreme_nvs_iccv19,
+  title={Extreme view synthesis},
+  author={Choi, Inchang and Gallo, Orazio and Troccoli, Alejandro and Kim, Min H and Kautz, Jan},
+  booktitle=ICCV,
+  year={2019}
+}
+
+@article{kalantari2016learning_tog16,
+  title={Learning-based view synthesis for light field cameras},
+  author={Kalantari, Nima Khademi and Wang, Ting-Chun and Ramamoorthi, Ravi},
+  journal=TOG,
+  year={2016},
+}
+
+@inproceedings{riegler2020_freenvs_eccv20,
+  title={Free view synthesis},
+  author={Riegler, Gernot and Koltun, Vladlen},
+  booktitle=ECCV,
+  year={2020},
+}
+
+@inproceedings{riegler2021_stablenvs_cvpr21,
+  title={Stable view synthesis},
+  author={Riegler, Gernot and Koltun, Vladlen},
+  booktitle=CVPR,
+  year={2021}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Software 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{collobert2011torch7,
+  title={Torch7: A matlab-like environment for machine learning},
+  author={Collobert, Ronan and Kavukcuoglu, Koray and Farabet, Cl{\'e}ment},
+  booktitle={BigLearn, NIPS Workshop},
+  year={2011}
+}
+@misc{paszke2017pytorch,
+  title={{PyTorch}: Tensors and dynamic neural networks in {P}ython with strong {GPU} acceleration},
+  author={Paszke, Adam and Gross, Sam and Chintala, Soumith and Chanan, Gregory},
+  year={2017}
+}
+@misc{povray,
+ title={Persistence of vision (tm) raytracer},
+ note={\url{http://www.povray.org/}}
+}
+@misc{jakob2010mitsuba,
+  title={Mitsuba renderer},
+  author={Jakob, Wenzel},
+  year={2010}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Dataset 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{deng2009imagenet,
+  title={Imagenet: A large-scale hierarchical image database},
+  author={Deng, Jia and Dong, Wei and Socher, Richard and Li, Li-Jia and Li, Kai and Fei-Fei, Li},
+  booktitle=CVPR,
+  year={2009}
+}
+@inproceedings{lin2014microsoft,
+  title={Microsoft coco: Common objects in context},
+  author={Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Doll{\'a}r, Piotr and Zitnick, C Lawrence},
+  booktitle=ECCV,
+  year={2014},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Image Processing, Evaluation Metrics 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{wang2004image,
+  title={Image quality assessment: {From} error visibility to structural similarity},
+  author={Wang, Zhou and Bovik, Alan C and Sheikh, Hamid R and Simoncelli, Eero P},
+  journal=TIP,
+  year={2004},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Neural Network Architecture 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%% CNN %%%%%%%%%%%%%%%%%%
+@article{bromley1993signature,
+  title={SIGNATURE VERIFICATION USING A" SIAMESE" TIME DELAY NEURAL NETWORK},
+  author={Bromley, Jane and Guyon, Isabelle and LeCun, Yann and S{\"a}ckinger, Eduard and Shah, Roopak},
+  journal={International Journal of Pattern Recognition and Artificial Intelligence},
+  year={1993}
+}
+@article{lecun1998gradient,
+  title={Gradient-based learning applied to document recognition},
+  author={LeCun, Yann and Bottou, L{\'e}on and Bengio, Yoshua and Haffner, Patrick},
+  journal={Proceedings of the IEEE},
+  year={1998},
+}
+@inproceedings{krizhevsky2012imagenet,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle=NIPS,
+  year={2012}
+}
+@inproceedings{girshick2015fast,
+  title={Fast r-cnn},
+  author={Girshick, Ross},
+  booktitle=ICCV,
+  year={2015}
+}
+@inproceedings{long2015fully,
+  title={Fully convolutional networks for semantic segmentation},
+  author={Long, Jonathan and Shelhamer, Evan and Darrell, Trevor},
+  booktitle=CVPR,
+  year={2015}
+}
+@inproceedings{he2015delving,
+  title={Delving deep into rectifiers: Surpassing human-level performance on {ImageNet} classification},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle=ICCV,
+  year={2015}
+}
+@inproceedings{jaderberg2015spatial,
+  title={Spatial transformer networks},
+  author={Jaderberg, Max and Simonyan, Karen and Zisserman, Andrew and others},
+  booktitle=NIPS,
+  year={2015}
+}
+@inproceedings{ronneberger2015u,
+  title={U-net: Convolutional networks for biomedical image segmentation},
+  author={Ronneberger, Olaf and Fischer, Philipp and Brox, Thomas},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  year={2015},
+}
+@inproceedings{kim2016accurate,
+  title={Accurate image super-resolution using very deep convolutional networks},
+  author={Kim, Jiwon and Kwon Lee, Jung and Mu Lee, Kyoung},
+  booktitle=CVPR,
+  year={2016}
+}
+@inproceedings{he2016deep,
+  title={Deep residual learning for image recognition},
+  author={He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  booktitle=CVPR,
+  year={2016}
+}
+@InProceedings{Nah_2017_CVPR,
+  author = {Nah, Seungjun and Kim, Tae Hyun and Lee, Kyoung Mu},
+  title={Deep multi-scale convolutional neural network for dynamic scene deblurring},
+  booktitle = CVPR,
+  year = {2017}
+}
+@inproceedings{shi2016learning,
+  title={Learning Non-{Lambertian} Object Intrinsics across ShapeNet Categories},
+  author={Shi, Jian and Dong, Yue and Su, Hao and Yu, Stella X},
+  Booktitle=CVPR,
+  year={2017}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Optimization Method, Solver 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{kingma2014adam,
+  title={{ADAM}: A method for stochastic optimization},
+  author={Kingma, Diederik and Ba, Jimmy},
+  Booktitle=ICLR,
+  year={2015}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Depth, Disparity, Flow Normal Related 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Subsec. Depth 
+@inproceedings{eigen2014depth,
+  title={Depth map prediction from a single image using a multi-scale deep network},
+  author={Eigen, David and Puhrsch, Christian and Fergus, Rob},
+  booktitle=NIPS,
+  year={2014}
+}
+@inproceedings{eigen2015predicting,
+  title={Predicting depth, surface normals and semantic labels with a common multi-scale convolutional architecture},
+  author={Eigen, David and Fergus, Rob},
+  booktitle=ICCV,
+  year={2015}
+}
+@inproceedings{garg2016unsupervised,
+  title={Unsupervised {CNN} for single view depth estimation: Geometry to the rescue},
+  author={Garg, Ravi and Carneiro, Gustavo and Reid, Ian},
+  booktitle=ECCV,
+  year={2016},
+}
+@article{godard2017unsupervised,
+  title={Unsupervised Monocular Depth Estimation with Left-Right Consistency},
+  author={Godard, Cl{\'e}ment and Mac Aodha, Oisin and Brostow, Gabriel J},
+  journal=CVPR,
+  year={2017}
+}
+@inproceedings{zhou2017unsupervised,
+  title = {Unsupervised Learning of Depth and Ego-Motion from Video},
+  author = {Zhou, Tinghui and Brown, Matthew and Snavely, Noah and Lowe, David G.},
+  booktitle = CVPR,
+  year = {2017}
+}
+
+%%%%%%%%% Subsec. Normal 
+@inproceedings{Ladicky2014normal,
+  title={Discriminatively trained dense surface normal estimation},
+  author={Ladicky, Lubor and Zeisl, Bernhard and Pollefeys, Marc},
+  booktitle=ECCV,
+  year={2014},
+}
+@inproceedings{wang2015designing,
+  title={Designing deep networks for surface normal estimation},
+  author={Wang, Xiaolong and Fouhey, David and Gupta, Abhinav},
+  booktitle=CVPR,
+  year={2015}
+}
+
+%%%%%%%%% Subsec. Flow 
+@inproceedings{fischer2015flownet,
+  title={Flownet: Learning optical flow with convolutional networks},
+  author={Fischer, Philipp and Dosovitskiy, Alexey and Ilg, Eddy and H{\"a}usser, Philip and Haz{\i}rba{\c{s}}, Caner and Golkov, Vladimir and van der Smagt, Patrick and Cremers, Daniel and Brox, Thomas},
+  booktitle = ICCV,
+  year={2015}
+}
+@inproceedings{zhou2016view,
+  title={View synthesis by appearance flow},
+  author={Zhou, Tinghui and Tulsiani, Shubham and Sun, Weilun and Malik, Jitendra and Efros, Alexei A},
+  booktitle=ECCV,
+  year={2016},
+}
+@inproceedings{jason2016back,
+  title={Back to Basics: Unsupervised Learning of Optical Flow via Brightness Constancy and Motion Smoothness},
+  author={Jason, J Yu and Harley, Adam W and Derpanis, Konstantinos G},
+  booktitle=ECCVW,
+  year={2016},
+}
+@inproceedings{ilg2017flownet,
+  title={Flownet 2.0: Evolution of optical flow estimation with deep networks},
+  author={Ilg, Eddy and Mayer, Nikolaus and Saikia, Tonmoy and Keuper, Margret and Dosovitskiy, Alexey and Brox, Thomas},
+  booktitle=CVPR,
+  year={2017}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Photometry 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Subsec. Shape from Shading / Inverse Rendering 
+@article{frankot1988method,
+  title={A method for enforcing integrability in shape from shading algorithms},
+  author={Frankot, Robert T. and Chellappa, Rama},
+  journal=TPAMI,
+  year={1988},
+}
+@inproceedings{kajiya1986rendering,
+  title={The rendering equation},
+  author={Kajiya, James T},
+  booktitle={Proceedings of the 13th annual conference on Computer graphics and interactive techniques},
+  pages={143--150},
+  year={1986}
+}
+@inproceedings{johnson2011shape,
+  title={Shape estimation in natural illumination},
+  author={Johnson, Micah K and Adelson, Edward H},
+  booktitle=CVPR,
+  year={2011},
+}
+@article{xiong2014shading,
+  title={From shading to local shape},
+  author={Xiong, Ying and Chakrabarti, Ayan and Basri, Ronen and Gortler, Steven J. and Jacobs, David W. and Zickler, Todd},
+  journal=TPAMI,
+  year={2014},
+}
+@article{ramamoorthi2001signal,
+  title={A signal-processing framework for inverse rendering},
+  author={Ramamoorthi, Ravi and Hanrahan, Pat},
+  journal=TOG,
+  pages={117--128},
+  year={2001}
+}
+@inproceedings{park2018photoshape,
+  title={PhotoShape: photorealistic materials for large-scale shape collections},
+  author={Park, Keunhong and Rematas, Konstantinos and Farhadi, Ali and Seitz, Steven M},
+  booktitle=TOG,
+  year={2018},
+}
+@article{deschaintre2018single,
+  title={Single-image svbrdf capture with a rendering-aware deep network},
+  author={Deschaintre, Valentin and Aittala, Miika and Durand, Fredo and Drettakis, George and Bousseau, Adrien},
+  journal=TOG,
+  year={2018},
+}
+@inproceedings{li2018materials,
+  title={Materials for masses: SVBRDF acquisition with a single mobile phone image},
+  author={Li, Zhengqin and Sunkavalli, Kalyan and Chandraker, Manmohan},
+  booktitle=ECCV,
+  pages={72--87},
+  year={2018}
+}
+@article{nam2018practical,
+  title={Practical svbrdf acquisition of 3d objects with unstructured flash photography},
+  author={Nam, Giljoo and Lee, Joo Ho and Gutierrez, Diego and Kim, Min H},
+  journal=TOG,
+  volume={37},
+  number={6},
+  pages={1--12},
+  year={2018},
+}
+@article{li2018learning,
+  title={Learning to reconstruct shape and spatially-varying reflectance from a single image},
+  author={Li, Zhengqin and Xu, Zexiang and Ramamoorthi, Ravi and Sunkavalli, Kalyan and Chandraker, Manmohan},
+  journal=TOG,
+  volume={37},
+  number={6},
+  pages={1--11},
+  year={2018},
+}
+@inproceedings{li2021openrooms,
+  title={OpenRooms: An Open Framework for Photorealistic Indoor Scene Datasets},
+  author={Li, Zhengqin and Yu, Ting-Wei and Sang, Shen and Wang, Sarah and Song, Meng and Liu, Yuhan and Yeh, Yu-Ying and Zhu, Rui and Gundavarapu, Nitesh and Shi, Jia and others},
+  booktitle=CVPR,
+  pages={7190--7199},
+  year={2021}
+}
+
+%%%%%%%%% Subsec. Photometric Stereo Survey and Dataset 
+@inproceedings{debevec1998rendering,
+  title={Rendering synthetic objects into real scenes: Bridging traditional and image-based graphics with global illumination and high dynamic range photography},
+  author={Debevec, Paul},
+  booktitle=SIGGRAPH,
+  year={2008},
+}
+@inproceedings{matusik2003merl,
+  title={A Data-Driven Reflectance Model},
+  author={Matusik, Wojciech and Pfister, Hanspeter and Brand, Matt and McMillan, Leonard},
+  booktitle=TOG,
+  year={2003},
+}
+@inproceedings{einarsson2006relighting,
+  title={Relighting human locomotion with flowed reflectance fields},
+  author={Einarsson, Per and Chabert, Charles-Felix and Jones, Andrew and Ma, Wan-Chun and Lamond, Bruce and Hawkins, Tim and Bolas, Mark and Sylwan, Sebastian and Debevec, Paul},
+  booktitle=SIGGRAPH,
+  year={2006},
+}
+@article{herbort2011introduction,
+  title={An introduction to image-based {3D} surface reconstruction and a survey of photometric stereo methods},
+  author={Herbort, Steffen and W{\"o}hler, Christian},
+  journal={3D Research},
+  year={2011},
+}
+@inproceedings{burley2012physically,
+  title={Physically-based shading at disney. part of “Practical Physically-Based Shading in Film and Game Production,”},
+  author={Burley, Brent and Studios, Walt Disney Animation},
+  year={2012},
+}
+@inproceedings{lombardi2012reflectance,
+  title={Reflectance and natural illumination from a single image},
+  author={Lombardi, Stephen and Nishino, Ko},
+  booktitle=ECCV,
+  year={2012},
+}
+@article{ackermann2015survey,
+  title={A survey of photometric stereo techniques},
+  author={Ackermann, Jens and Goesele, Michael},
+  journal={Foundations and Trends in Computer Graphics and Vision},
+  year={2015},
+}
+@inproceedings{shi2016benchmark,
+  title={A benchmark dataset and evaluation for non-{Lambertian} and uncalibrated photometric stereo},
+  author={Shi, Boxin and Wu, Zhe and Mo, Zhipeng and Duan, Dinglong and Yeung, Sai-Kit and Tan, Ping},
+  booktitle=CVPR,
+  year={2016}
+}
+@article{shi2019benchmark,
+  title={A benchmark dataset and evaluation for non-{Lambertian} and uncalibrated photometric stereo},
+  author={Shi, Boxin and Mo, Zhipeng and Wu, Zhe and Duan, Dinglong and Yeung, Sai-Kit and Tan, Ping},
+  journal=TPAMI,
+  year={2019}
+}
+@article{mecca2021luces,
+  title={LUCES: A Dataset for Near-Field Point Light Source Photometric Stereo},
+  author={Mecca, Roberto and Logothetis, Fotios and Budvytis, Ignas and Cipolla, Roberto},
+  journal={arXiv preprint arXiv:2104.13135},
+  year={2021}
+}
+%%%%%%%%% Subsec. Calibrated Photometric Stereo 
+@article{woodham1980ps,
+  title={Photometric method for determining surface orientation from multiple images},
+  author={Woodham, Robert J.},
+  journal={Optical Engineering},
+  year={1980},
+}
+@phdthesis{silver1980determining,
+  title={Determining shape and reflectance using multiple images},
+  author={Silver, William M.},
+  year={1980},
+  school={Massachusetts Institute of Technology}
+}
+@article{mukaigawa2007analysis,
+  title={Analysis of photometric factors based on photometric linearization},
+  author={Mukaigawa, Yasuhiro and Ishii, Yasunori and Shakunaga, Takeshi},
+  journal={JOSA A},
+  year={2007},
+}
+@inproceedings{chung2008efficient,
+  title={Efficient photometric stereo on glossy surfaces with wide specular lobes},
+  author={Chung, Hin-Shun and Jia, Jiaya},
+  booktitle=CVPR,
+  year={2008},
+}
+@inproceedings{alldrin2008p,
+  title={Photometric stereo with non-parametric and spatially-varying reflectance},
+  author={Alldrin, Neil G. and Zickler, Todd and Kriegman, David J.},
+  booktitle=CVPR,
+  year={2008},
+}
+@inproceedings{holroyd2008photometric,
+  title={A photometric approach for estimating normals and tangents},
+  author={Holroyd, Michael and Lawrence, Jason and Humphreys, Greg and Zickler, Todd},
+  booktitle=TOG,
+  year={2008},
+}
+@inproceedings{ruiters2009heightfield,
+  title={Heightfield and spatially varying {BRDF} reconstruction for materials with interreflections},
+  author={Ruiters, Roland and Klein, Reinhard},
+  booktitle={Computer Graphics Forum},
+  year={2009},
+}
+@article{goldman2010shape,
+  title={Shape and spatially-varying {BRDF}s from photometric stereo},
+  author={Goldman, Dan B. and Curless, Brian and Hertzmann, Aaron and Seitz, Steven M.},
+  journal=TPAMI,
+  year={2010},
+}
+@inproceedings{wu2010robust,
+  title={Robust photometric stereo via low-rank matrix completion and recovery},
+  author={Wu, Lun and Ganesh, Arvind and Shi, Boxin and Matsushita, Yasuyuki and Wang, Yongtian and Ma, Yi},
+  booktitle=ACCV,
+  year={2010},
+}  
+@article{wu2010photometric,
+  title={Photometric stereo via expectation maximization},
+  author={Wu, Tai-Pang and Tang, Chi-Keung},
+  journal=TPAMI,
+  year={2010},
+  publisher={IEEE}
+}
+@article{miyazaki2010median,
+  title={Median photometric stereo as applied to the segonko tumulus and museum objects},
+  author={Miyazaki, Daisuke and Hara, Kenji and Ikeuchi, Katsushi},
+  journal=IJCV,
+  year={2010},
+}
+@inproceedings{ikehata2012robust,
+  title={Robust photometric stereo using sparse regression},
+  author={Ikehata, Satoshi and Wipf, David and Matsushita, Yasuyuki and Aizawa, Kiyoharu},
+  booktitle=CVPR,
+  year={2012},
+}
+@inproceedings{shi2012elev,
+  title={Elevation angle from reflectance monotonicity: Photometric stereo for general isotropic reflectances},
+  author={Shi, Boxin and Tan, Ping and Matsushita, Yasuyuki and Ikeuchi, Katsushi},
+  booktitle=ECCV,
+  year={2012},
+}
+@article{shen2016efficient,
+  title={Efficient photometric stereo using kernel regression},
+  author={Shen, Hui-Liang and Han, Tian-Qi and Li, Chunguang},
+  journal=TIP,
+  volume={26},
+  number={1},
+  pages={439--451},
+  year={2016},
+}
+@inproceedings{ikehata2014p,
+  title={Photometric stereo using constrained bivariate regression for general isotropic surfaces},
+  author={Ikehata, Satoshi and Aizawa, Kiyoharu},
+  booktitle=CVPR,
+  year={2014}
+}
+@article{shi2014bi,
+  title={Bi-polynomial modeling of low-frequency reflectances},
+  author={Shi, Boxin and Tan, Ping and Matsushita, Yasuyuki and Ikeuchi, Katsushi},
+  journal=TPAMI,
+  year={2014},
+}
+@article{ikehata2014photometric,
+  title={Photometric stereo using sparse Bayesian regression for general diffuse surfaces},
+  author={Ikehata, Satoshi and Wipf, David and Matsushita, Yasuyuki and Aizawa, Kiyoharu},
+  journal=TPAMI,
+  volume={36},
+  number={9},
+  pages={1816--1831},
+  year={2014},
+}
+@inproceedings{zhui2015ps,
+  title={A Dictionary-based Approach for Estimating Shape and Spatially-Varying Reflectance},
+  author={Zhuo Hui and Aswin C. Sankaranarayanan},
+  booktitle=ICCP,
+  year={2015}
+}
+@article{han2015photometric,
+  title={Photometric stereo for general BRDFs via reflection sparsity modeling},
+  author={Han, Tian-Qi and Shen, Hui-Liang},
+  journal=TIP,
+  volume={24},
+  number={12},
+  pages={4888--4903},
+  year={2015},
+}
+@article{tozza2016direct,
+  title={Direct differential photometric stereo shape recovery of diffuse and specular surfaces},
+  author={Tozza, Silvia and Mecca, Roberto and Duocastella, M and Del Bue, A},
+  journal={Journal of Mathematical Imaging and Vision},
+  year={2016},
+}
+@inproceedings{santo2017deep,
+  title={Deep Photometric Stereo Network},
+  author={Santo, Hiroaki and Samejima, Masaki and Sugano, Yusuke and Shi, Boxin and Matsushita, Yasuyuki},
+  booktitle=ICCVW,
+  year={2017}
+}
+@article{hui2017shape,
+  title={Shape and Spatially-Varying Reflectance Estimation from Virtual Exemplars},
+  author={Hui, Zhuo and Sankaranarayanan, Aswin C},
+  journal=TPAMI,
+  year={2017},
+}
+@inproceedings{chen2018ps,
+  title={{PS-FCN}: A Flexible Learning Framework for Photometric Stereo},
+  author={Chen, Guanying and Han, Kai and Wong, Kwan-Yee K.},
+  booktitle=ECCV,
+  pages={3--18},
+  year={2018}
+}
+@inproceedings{ikehata2018cnn,
+  title={{CNN-PS}: {CNN-based} Photometric Stereo for General Non-Convex Surfaces},
+  author={Ikehata, Satoshi},
+  booktitle=ECCV,
+  year={2018}
+}
+@inproceedings{Taniai18,
+  title={Neural Inverse Rendering for General Reflectance Photometric Stereo},
+  author={Tatsunori Taniai and Takanori Maehara},
+  booktitle=ICML,
+  year={2018},
+}
+@article{zheng2019numerical,
+  title={Numerical reflectance compensation for non-lambertian photometric stereo},
+  author={Zheng, Qian and Kumar, Ajay and Shi, Boxin and Pan, Gang},
+  journal=TIP,
+  volume={28},
+  number={7},
+  pages={3177--3191},
+  year={2019},
+}
+@inproceedings{li2019learning,
+  title={Learning to Minify Photometric Stereo},
+  author={Li, Junxuan and Robles-Kelly, Antonio and You, Shaodi and Matsushita, Yasuyuki},
+  booktitle=CVPR,
+  year={2019}
+}
+@inproceedings{zheng2019spline,
+  title={{SPLINE-Net}: Sparse Photometric Stereo through Lighting Interpolation and Normal Estimation Networks},
+  author={Zheng, Qian and Jia, Yiming and Shi, Boxin and Jiang, Xudong and Duan, Ling-Yu and Kot, Alex C.},
+  booktitle=ICCV,
+  year={2019}
+}
+@inproceedings{chen2019self,
+  title={Self-calibrating Deep Photometric Stereo Networks},
+  author={Chen, Guanying and Han, Kai and Shi, Boxin and Matsushita, Yasuyuki and Wong, Kwan-Yee K.},
+  booktitle=CVPR,
+  pages={8739--8747},
+  year={2019}
+}
+@article{chen2020deepps,
+  title={Deep Photometric Stereo for Non-{Lambertian} Surfaces},
+  author={Chen, Guanying and Han, Kai and Shi, Boxin and Matsushita, Yasuyuki and Wong, Kwan-Yee K.},
+  journal=TPAMI,
+  volume={44},
+  number={1},
+  pages={129--142},
+  year={2020},
+}
+@inproceedings{logothetis2021px,
+  title={PX-NET: Simple and Efficient Pixel-Wise Training of Photometric Stereo Networks},
+  author={Logothetis, Fotios and Budvytis, Ignas and Mecca, Roberto and Cipolla, Roberto},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={12757--12766},
+  year={2021}
+}
+@article{li2021neural,
+  title={Neural Photometric Stereo for Shape and Material Estimation},
+  author={Li, Junxuan and Li, Hongdong},
+  year={2021}
+}
+%%%%%%%%% Subsec. Uncalibrated Photometric Stereo 
+@article{hayakawa1994photometric,
+  title={Photometric stereo under a light source with arbitrary motion},
+  author={Hayakawa, Hideki},
+  journal={JOSA A},
+  year={1994},
+}
+@inproceedings{epstein1996learning,
+  title={Learning object representations from lighting variations},
+  author={Epstein, Russell and Yuille, Alan L. and Belhumeur, Peter N.},
+  booktitle={International Workshop on Object Representation in Computer Vision},
+  year={1996},
+}
+@inproceedings{yuille1997shape,
+  title={Shape and albedo from multiple images using integrability},
+  author={Yuille, Alan and Snow, Daniel},
+  booktitle=CVPR,
+  year={1997},
+}
+@article{belhumeur1999bas,
+  title={The bas-relief ambiguity},
+  author={Belhumeur, Peter N. and Kriegman, David J. and Yuille, Alan L.},
+  journal=IJCV,
+  year={1999},
+}
+@article{yuille1999determining,
+  title={Determining generative models of objects under varying illumination: Shape and albedo from multiple images using {SVD} and integrability},
+  author={Yuille, Alan L. and Snow, Daniel and Epstein, Russell and Belhumeur, Peter N.},
+  journal=IJCV,
+  year={1999},
+}
+@article{kriegman2001shadows,
+  title={What shadows reveal about object structure},
+  author={Kriegman, David J. and Belhumeur, Peter N.},
+  journal={JOSA A},
+  year={2001},
+}
+@inproceedings{drbohlav2002specularities,
+  title={Specularities reduce ambiguity of uncalibrated photometric stereo},
+  author={Drbohlav, Ond{\v{r}}ej and {\v{S}}{\'a}ra, Radim},
+  booktitle=ECCV,
+  year={2002},
+}
+@inproceedings{georghiades2003incorporating,
+  title={Incorporating the {Torrance} and {Sparrow} Model of Reflectance in Uncalibrated Photometric Stereo},
+  author={Georghiades, Athinodoros S.},
+  booktitle=ICCV,
+  year={2003}
+}
+@inproceedings{drbohlav2005can,
+  title={Can two specular pixels calibrate photometric stereo?},
+  author={Drbohlav, Ond{\v{r}}ej and Chantler, Mike},
+  booktitle=ICCV,
+  year={2005},
+}
+@article{hertzmann2005example,
+  title={Example-based photometric stereo: {S}hape reconstruction with general, varying {BRDFs}},
+  author={Hertzmann, Aaron and Seitz, Steven M.},
+  journal=TPAMI,
+  year={2005},
+}
+@inproceedings{chandraker2005reflections,
+  title={Reflections on the generalized bas-relief ambiguity},
+  author={Chandraker, Manmohan Krishna and Kahl, Fredrik and Kriegman, David J.},
+  booktitle=CVPR,
+  year={2005},
+}
+@inproceedings{alldrin2007r,
+  title={Resolving the generalized bas-relief ambiguity by entropy minimization},
+  author={Alldrin, Neil G. and Mallick, Satya P. and Kriegman, David J.},
+  booktitle=CVPR,
+  year={2007},
+}
+@inproceedings{tan2007isotropy,
+  title={Isotropy, reciprocity and the generalized bas-relief ambiguity},
+  author={Tan, Ping and Mallick, Satya P. and Quan, Long and Kriegman, David J. and Zickler, Todd},
+  booktitle=CVPR,
+  year={2007},
+}
+@inproceedings{sato2007shape,
+  title={Shape reconstruction based on similarity in radiance changes under varying illumination},
+  author={Sato, Imari and Okabe, Takahiro and Yu, Qiong and Sato, Yoichi},
+  booktitle=ICCV,
+  year={2007},
+}
+@inproceedings{okabe2009attached,
+  title={Attached shadow coding: Estimating surface normals from shadows under unknown reflectance and lighting conditions},
+  author={Okabe, Takahiro and Sato, Imari and Sato, Yoichi},
+  booktitle=ICCV,
+  year={2009},
+}
+@inproceedings{shi2010self,
+  title={Self-calibrating photometric stereo},
+  author={Shi, Boxin and Matsushita, Yasuyuki and Wei, Yichen and Xu, Chao and Tan, Ping},
+  booktitle=CVPR,
+  year={2010},
+}
+@inproceedings{zhou2010ring,
+  title={Ring-light photometric stereo},
+  author={Zhou, Zhenglong and Tan, Ping},
+  booktitle=ECCV,
+  year={2010},
+}
+@inproceedings{sunkavalli2010visibility,
+  title={Visibility subspaces: Uncalibrated photometric stereo with shadows},
+  author={Sunkavalli, Kalyan and Zickler, Todd and Pfister, Hanspeter},
+  booktitle=ECCV,
+  year={2010},
+}
+@inproceedings{lu2013uncalibrated,
+  title={Uncalibrated photometric stereo for unknown isotropic reflectances},
+  author={Lu, Feng and Matsushita, Yasuyuki and Sato, Imari and Okabe, Takahiro and Sato, Yoichi},
+  booktitle=CVPR,
+  year={2013},
+}
+@inproceedings{wu2013calib,
+  title={Calibrating photometric stereo by holistic reflectance symmetry analysis},
+  author={Wu, Zhe and Tan, Ping},
+  booktitle=CVPR,
+  year={2013},
+}
+@article{papad14closed,
+  title={A closed-form, consistent and robust solution to uncalibrated photometric stereo via local diffuse reflectance maxima},
+  author={Papadhimitri, Thoma and Favaro, Paolo},
+  journal=IJCV,
+  year={2014},
+}
+@article{lu2015intensity,
+  title={From intensity profile to surface normal: {P}hotometric stereo for unknown light sources and isotropic reflectances},
+  author={Lu, Feng and Matsushita, Yasuyuki and Sato, Imari and Okabe, Takahiro and Sato, Yoichi},
+  journal=TPAMI,
+  year={2015},
+}
+@inproceedings{lu2015uncalibrated,
+  title={Uncalibrated photometric stereo based on elevation angle recovery from {BRDF} symmetry of isotropic materials},
+  author={Lu, Feng and Sato, Imari and Sato, Yoichi},
+  booktitle=CVPR,
+  year={2015}
+}
+@inproceedings{midorikawa2016uncalibrated,
+  title={Uncalibrated Photometric Stereo by Stepwise Optimization Using Principal Components of Isotropic {BRDF}s.},
+  author={Midorikawa, Keisuke and Yamasaki, Toshihiko and Aizawa, Kiyoharu},
+  booktitle=CVPR,
+  year={2016}
+}
+@inproceedings{cho2016photometric,
+  title={Photometric stereo under non-uniform light intensities and exposures},
+  author={Cho, Donghyeon and Matsushita, Yasuyuki and Tai, Yu-Wing and Kweon, Inso},
+  booktitle=ECCV,
+  year={2016},
+}
+@inproceedings{queau2017non,
+  title={A non-convex variational approach to photometric stereo under inaccurate lighting},
+  author={Qu\'{e}au, Yvain and Wu, Tao and Lauze, Fran\c{c}ois and Durou, Jean-Denis and Cremers, Daniel},
+  booktitle=CVPR,
+  year={2017}
+}
+@inproceedings{peng2017depth,
+  title={Depth Super-Resolution Meets Uncalibrated Photometric Stereo},
+  author={Peng, Songyou and H{\"a}fner, Bj{\"o}rn and Qu{\'e}au, Yvain and Cremers, Daniel},
+  booktitle=ICCV,
+  year={2017}
+}
+@article{cho2018semi,
+  title={Semi-Calibrated Photometric Stereo},
+  author={Cho, DongHyeon and Matsushita, Yasuyuki and Tai, Yu Wing and Kweon, In So},
+  journal=TPAMI,
+  year={2018},
+}
+@article{lu2018symps,
+  title={{SymPS}: {BRDF} symmetry guided photometric stereo for shape and light source estimation},
+  author={Lu, Feng and Chen, Xiaowu and Sato, Imari and Sato, Yoichi},
+  journal=TPAMI,
+  year={2018},
+}
+@article{bartal2018photometric,
+  title={Photometric stereo by hemispherical metric embedding},
+  author={Bartal, Ofer and Ofir, Nati and Lipman, Yaron and Basri, Ronen},
+  journal={Journal of Mathematical Imaging and Vision},
+  year={2018},
+}
+@article{chen2020chen_gcnet,
+  title={What is Learned in Deep Uncalibrated Photometric Stereo? },
+  author={Chen, Guanying and Waechter Michael and Shi, Boxin and Matsushita, Yasuyuki and Wong, Kwan-Yee K.},
+  journal=ECCV,
+  pages={745--762},
+  year={2020},
+}
+@inproceedings{kaya2021uncalibrated,
+  title={Uncalibrated neural inverse rendering for photometric stereo of general surfaces},
+  author={Kaya, Berk and Kumar, Suryansh and Oliveira, Carlos and Ferrari, Vittorio and Van Gool, Luc},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={3804--3814},
+  year={2021}
+}
+%%%%%%%%% Subsec. Multi-view Photometric Stereo 
+@inproceedings{lim2005passive,
+  title={Passive photometric stereo from motion},
+  author={Lim, Jongwoo and Ho, Jeffrey and Yang, Ming-Hsuan and Kriegman, David},
+  booktitle=ICCV,
+  pages={1635--1642},
+  year={2005},
+}
+@article{esteban2008multiview,
+  title={Multiview photometric stereo},
+  author={Esteban, Carlos Hernandez and Vogiatzis, George and Cipolla, Roberto},
+  journal=TPAMI,
+  year={2008},
+}
+@article{wu2010fusing,
+  title={Fusing multiview and photometric stereo for 3d reconstruction under uncalibrated illumination},
+  author={Wu, Chenglei and Liu, Yebin and Dai, Qionghai and Wilburn, Bennett},
+  journal=TVCG,
+  volume={17},
+  number={8},
+  pages={1082--1095},
+  year={2010},
+}
+@inproceedings{zhou2013multi,
+  title={Multi-view photometric stereo with spatially varying isotropic materials},
+  author={Zhou, Zhenglong and Wu, Zhe and Tan, Ping},
+  booktitle=CVPR,
+  pages={1482--1489},
+  year={2013}
+}
+@inproceedings{oxholm2014multiview,
+  title={Multiview shape and reflectance from natural illumination},
+  author={Oxholm, Geoffrey and Nishino, Ko},
+  booktitle=CVPR,
+  pages={2155--2162},
+  year={2014}
+}
+@article{park2016robust,
+  title={Robust multiview photometric stereo using planar mesh parameterization},
+  author={Park, Jaesik and Sinha, Sudipta N and Matsushita, Yasuyuki and Tai, Yu-Wing and Kweon, In So},
+  journal=TPAMI,
+  year={2016},
+}
+@inproceedings{kim2016multi,
+  title={Multi-view inverse rendering under arbitrary illumination and albedo},
+  author={Kim, Kichang and Torii, Akihiko and Okutomi, Masatoshi},
+  booktitle=ECCV,
+  pages={750--767},
+  year={2016},
+}
+@inproceedings{langguth2016shading,
+  title={Shading-aware multi-view stereo},
+  author={Langguth, Fabian and Sunkavalli, Kalyan and Hadap, Sunil and Goesele, Michael},
+  booktitle=ECCV,
+  pages={469--485},
+  year={2016},
+}
+@article{maurer2018combining,
+  title={Combining shape from shading and stereo: A joint variational method for estimating depth, illumination and albedo},
+  author={Maurer, Daniel and Ju, Yong Chul and Breu{\ss}, Michael and Bruhn, Andr{\'e}s},
+  journal={International Journal of Computer Vision},
+  volume={126},
+  number={12},
+  pages={1342--1366},
+  year={2018},
+}
+@inproceedings{melou2019splitting,
+  title={A splitting-based algorithm for multi-view stereopsis of textureless objects},
+  author={M{\'e}lou, Jean and Qu{\'e}au, Yvain and Castan, Fabien and Durou, Jean-Denis},
+  booktitle={International Conference on Scale Space and Variational Methods in Computer Vision},
+  pages={51--63},
+  year={2019},
+}
+@article{li2020multi,
+  title={Multi-view photometric stereo: a robust solution and benchmark dataset for spatially varying isotropic materials},
+  author={Li, Min and Zhou, Zhenglong and Wu, Zhe and Shi, Boxin and Diao, Changyu and Tan, Ping},
+  journal=TIP,
+  year={2020},
+}
+@inproceedings{logothetis2019differential,
+  title={A differential volumetric approach to multi-view photometric stereo},
+  author={Logothetis, Fotios and Mecca, Roberto and Cipolla, Roberto},
+  booktitle=ICCV,
+  pages={1052--1061},
+  year={2019}
+}
+@article{wang2020non,
+  title={{Non-Lambertian} photometric stereo network based on inverse reflectance model with collocated light},
+  author={Wang, Xi and Jian, Zhenxiong and Ren, Mingjun},
+  journal=TIP,
+  volume={29},
+  pages={6032--6042},
+  year={2020},
+}
+@inproceedings{cheng2021multi,
+  title={Multi-view 3D Reconstruction of a Texture-less Smooth Surface of Unknown Generic Reflectance},
+  author={Cheng, Ziang and Li, Hongdong and Asano, Yuta and Zheng, Yinqiang and Sato, Imari},
+  booktitle=CVPR,
+  pages={16226--16235},
+  year={2021}
+}
+@inproceedings{kaya2022neural,
+  title={Neural Radiance Fields Approach to Deep Multi-View Photometric Stereo},
+  author={Kaya, Berk and Kumar, Suryansh and Sarno, Francesco and Ferrari, Vittorio and Van Gool, Luc},
+  booktitle=WACV,
+  pages={1965--1977},
+  year={2022}
+}
+
+@article{kaya2022uncertainty,
+	Title = {Uncertainty-Aware Deep Multi-View Photometric Stereo},
+	Author = {Kaya, Berk and Kumar, Suryansh and Oliveira, Carlos and Ferrari, Vittorio and Van Gool, Luc},
+    journal={arXiv preprint arXiv:2010.07492},
+	Year = {2020}
+}
+
+%%%%%%%%% Subsec. Photometric Stereo under Natural Illumination 
+@article{basri2007photometric,
+  title={Photometric stereo with general, unknown lighting},
+  author={Basri, Ronen and Jacobs, David and Kemelmacher, Ira},
+  journal=IJCV,
+  year={2007},
+}
+@inproceedings{shen2009photometric,
+  title={Photometric stereo and weather estimation using internet images},
+  author={Shen, Li and Tan, Ping},
+  booktitle=CVPR,
+  year={2009},
+}
+@inproceedings{ackermann2012photometric,
+  title={Photometric stereo for outdoor webcams},
+  author={Ackermann, Jens and Langguth, Fabian and Fuhrmann, Simon and Goesele, Michael},
+  booktitle=CVPR,
+  year={2012},
+}
+@inproceedings{ackermann2010removing,
+  title={Removing the example from example-based photometric stereo},
+  author={Ackermann, Jens and Ritz, Martin and Stork, Andr{\'e} and Goesele, Michael},
+  booktitle=ECCVW,
+  year={2010},
+}
+@inproceedings{yu2013outdoor,
+  title={Outdoor photometric stereo},
+  author={Yu, Lap-Fai and Yeung, Sai-Kit and Tai, Yu-Wing and Terzopoulos, Demetri and Chan, Tony F},
+  booktitle=ICCP,
+  year={2013},
+}
+@inproceedings{shi2014photometric,
+  title={Photometric Stereo Using Internet Images},
+  author={Shi, Boxin and Inose, Kenji and Matsushita, Yasuyuki and Tan, Ping and Yeung, Sai-Kit and Ikeuchi, Katsushi},
+  booktitle={3DV},
+  year={2014}
+}
+@inproceedings{oxholm2014multiview,
+  title={Multiview shape and reflectance from natural illumination},
+  author={Oxholm, Geoffrey and Nishino, Ko},
+  booktitle=CVPR,
+  year={2014}
+}
+@inproceedings{hold2015good,
+  title={What is a good day for outdoor photometric stereo?},
+  author={Hold-Geoffroy, Yannick and Zhang, Jinsong and Gotardo, Paulo FU and Lalonde, Jean-Fran{\c{c}}ois},
+  booktitle=ICCP,
+  year={2015},
+}
+@inproceedings{hold2015x,
+  title={X-hour outdoor photometric stereo},
+  author={Hold-Geoffroy, Yannick and Zhang, Jinsong and Gotardo, Paulo FU and Lalonde, Jean-Fran{\c{c}}ois},
+  booktitle={3DV},
+  year={2015},
+}
+@inproceedings{jung2015one,
+  title={One-day outdoor photometric stereo via skylight estimation},
+  author={Jung, Jiyoung and Lee, Joon-Young and So Kweon, In},
+  booktitle=CVPR,
+  year={2015}
+}
+@inproceedings{hung2015photometric,
+  title={Photometric stereo in the wild},
+  author={Hung, Chun-Ho and Wu, Tai-Pang and Matsushita, Yasuyuki and Xu, Li and Jia, Jiaya and Tang, Chi-Keung},
+  booktitle=WACV,
+  year={2015},
+}
+@inproceedings{mo2018uncalibrated,
+  title={Uncalibrated Photometric Stereo Under Natural Illumination},
+  author={Mo, Zhipeng and Shi, Boxin and Lu, Feng and Yeung, Sai-Kit and Matsushita, Yasuyuki},
+  booktitle=CVPR,
+  year={2018}
+}
+@inproceedings{haefner2019variational,
+  title={Variational uncalibrated photometric stereo under general lighting},
+  author={Haefner, Bjoern and Ye, Zhenzhang and Gao, Maolin and Wu, Tao and Qu{\'e}au, Yvain and Cremers, Daniel},
+  booktitle=ICCV,
+  year={2019}
+}
+
+%%%%%%%%% Subsec. Light Calibration 
+@article{shen2011calibrating,
+  title={Calibrating light sources by using a planar mirror},
+  author={Shen, Hui-Liang and Cheng, Yue},
+  journal=JEI,
+  year={2011},
+  publisher={International Society for Optics and Photonics}
+}
+@inproceedings{Ackermann_2013_calibration,
+  booktitle = {Vision, Modeling \& Visualization},
+  title = {{Geometric Point Light Source Calibration}},
+  author = {Ackermann, Jens and Fuhrmann, Simon and Goesele, Michael},
+  year = {2013},
+}
+@inproceedings{Santo_2018_ECCV,
+  title = {Light Structure from Pin Motion: {S}imple and Accurate Point Light Calibration for Physics-based Modeling},
+  author = {Hiroaki Santo and Michael Waechter and Masaki Samejima and Yusuke Sugano and Yasuyuki Matsushita},
+  booktitle=ECCV,
+  year = {2018},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Illumination Estimation 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%% Lighting Estimation %%%%%%%%%%%%%%%%
+@article{gardner2017learning,
+  title={Learning to predict indoor illumination from a single image},
+  author={Gardner, Marc-Andr{\'e} and Sunkavalli, Kalyan and Yumer, Ersin and Shen, Xiaohui and Gambaretto, Emiliano and Gagn{\'e}, Christian and Lalonde, Jean-Fran{\c{c}}ois},
+  journal=TOG,
+  year={2017},
+}
+@inproceedings{hold2017deep,
+  title={Deep outdoor illumination estimation},
+  author={Hold-Geoffroy, Yannick and Sunkavalli, Kalyan and Hadap, Sunil and Gambaretto, Emiliano and Lalonde, Jean-Fran{\c{c}}ois},
+  booktitle=CVPR,
+  year={2017}
+}
+@inproceedings{weber2018learning,
+  author={Weber, Henrique and Pr{\'e}vost, Donald and Lalonde, Jean-Fran{\c{c}}ois},
+  title={Learning to Estimate Indoor Lighting from 3D Objects},
+  booktitle={3DV},
+  year={2018}
+}
+@InProceedings{Yi_2018_ECCV,
+  author = {Yi, Renjiao and Zhu, Chenyang and Tan, Ping and Lin, Stephen},
+  title = {Faces as Lighting Probes via Unsupervised Deep Highlight Extraction},
+  booktitle = ECCV,
+  year = {2018}
+}
+@InProceedings{Zhou_2018_CVPR,
+  author = {Zhou, Hao and Sun, Jin and Yacoob, Yaser and Jacobs, David W.},
+  title = {Label Denoising Adversarial Network ({LDAN}) for Inverse Lighting of Faces},
+  booktitle = CVPR,
+  year = {2018}
+}
+
+@inproceedings{srinivasan2020_lighthouse_cvpr20,
+  title={Lighthouse: Predicting lighting volumes for spatially-coherent illumination},
+  author={Srinivasan, Pratul P and Mildenhall, Ben and Tancik, Matthew and Barron, Jonathan T and Tucker, Richard and Snavely, Noah},
+  booktitle=CVPR,
+  year={2020}
+}
+
+@article{chen2021hdr,
+  title={{HDR} Video Reconstruction: A Coarse-to-fine Network and A Real-world Benchmark Dataset},
+  author={Chen, Guanying and Chen, Chaofeng and Guo, Shi and Liang, Zhetong and Wong, Kwan-Yee K and Zhang, Lei},
+  journal=ICCV,
+  pages={2502--2511},
+  year={2021}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Multi-view Reconstruction 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{kolmogorov2002multi,
+  title={Multi-camera scene reconstruction via graph cuts},
+  author={Kolmogorov, Vladimir and Zabih, Ramin},
+  booktitle=ECCV,
+  pages={82--96},
+  year={2002},
+}
+@article{furukawa2009accurate,
+  title={Accurate, dense, and robust multiview stereopsis},
+  author={Furukawa, Yasutaka and Ponce, Jean},
+  journal=TPAMI,
+  volume={32},
+  number={8},
+  pages={1362--1376},
+  year={2009},
+}
+@inproceedings{furukawa2009_manhattan_mvs_cvpr09,
+  title={Manhattan-world stereo},
+  author={Furukawa, Yasutaka and Curless, Brian and Seitz, Steven M and Szeliski, Richard},
+  booktitle=CVPR,
+  year={2009},
+}
+
+@inproceedings{seitz2006comparison,
+  title={A comparison and evaluation of multi-view stereo reconstruction algorithms},
+  author={Seitz, Steven M. and Curless, Brian and Diebel, James and Scharstein, Daniel and Szeliski, Richard},
+  booktitle=CVPR,
+  year={2006},
+}
+@article{agarwal2011building,
+  title={Building {Rome} in a day},
+  author={Agarwal, Sameer and Furukawa, Yasutaka and Snavely, Noah and Simon, Ian and Curless, Brian and Seitz, Steven M and Szeliski, Richard},
+  journal={Communications of the ACM},
+  year={2011},
+}
+@inproceedings{schonberger2016_sfm_cvpr16,
+  title={Structure-from-motion revisited},
+  author={Schonberger, Johannes L and Frahm, Jan-Michael},
+  booktitle=CVPR,
+  pages={4104--4113},
+  year={2016}
+}
+@inproceedings{schonberger2016pixelwise,
+  title={Pixelwise view selection for unstructured multi-view stereo},
+  author={Sch{\"o}nberger, Johannes L and Zheng, Enliang and Frahm, Jan-Michael and Pollefeys, Marc},
+  booktitle=ECCV,
+  pages={501--518},
+  year={2016},
+}
+@inproceedings{choy20163d,
+  title={3d-r2n2: A unified approach for single and multi-view 3d object reconstruction},
+  author={Choy, Christopher B and Xu, Danfei and Gwak, JunYoung and Chen, Kevin and Savarese, Silvio},
+  booktitle=ECCV,
+  year={2016},
+}
+@inproceedings{wiles2017silnet,
+  title={{SilNet}: Single-and Multi-View Reconstruction by Learning from Silhouettes},
+  author={Wiles, Olivia and Zisserman, Andrew},
+  booktitle=BMVC,
+  year={2017}
+}
+@inproceedings{hartmann2017learned,
+  title={Learned multi-patch similarity},
+  author={Hartmann, Wilfried and Galliani, Silvano and Havlena, Michal and Van Gool, Luc and Schindler, Konrad},
+  booktitle=ICCV,
+  year={2017}
+}
+@inproceedings{yao2018mvsnet,
+  title={Mvsnet: Depth inference for unstructured multi-view stereo},
+  author={Yao, Yao and Luo, Zixin and Li, Shiwei and Fang, Tian and Quan, Long},
+  booktitle=ECCV,
+  pages={767--783},
+  year={2018}
+}
+@inproceedings{im2019dpsnet,
+  title={DPSNet: End-to-end deep plane sweep stereo},
+  author={Im, Sunghoon and Jeon, Hae-Gon and Lin, Stephen and Kweon, In-So},
+  booktitle=ICLR,
+  year={2019},
+}
+@inproceedings{yao2019recurrent,
+  title={Recurrent mvsnet for high-resolution multi-view stereo depth inference},
+  author={Yao, Yao and Luo, Zixin and Li, Shiwei and Shen, Tianwei and Fang, Tian and Quan, Long},
+  booktitle=CVPR,
+  pages={5525--5534},
+  year={2019}
+}
+@inproceedings{luo2019p,
+  title={P-mvsnet: Learning patch-wise matching confidence aggregation for multi-view stereo},
+  author={Luo, Keyang and Guan, Tao and Ju, Lili and Huang, Haipeng and Luo, Yawei},
+  booktitle=ICCV,
+  pages={10452--10461},
+  year={2019}
+}
+@inproceedings{cheng2020deep,
+  title={Deep stereo using adaptive thin volume representation with uncertainty awareness},
+  author={Cheng, Shuo and Xu, Zexiang and Zhu, Shilin and Li, Zhuwen and Li, Li Erran and Ramamoorthi, Ravi and Su, Hao},
+  booktitle=CVPR,
+  pages={2524--2534},
+  year={2020}
+}
+@inproceedings{gu2020cascade,
+  title={Cascade cost volume for high-resolution multi-view stereo and stereo matching},
+  author={Gu, Xiaodong and Fan, Zhiwen and Zhu, Siyu and Dai, Zuozhuo and Tan, Feitong and Tan, Ping},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={2495--2504},
+  year={2020}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Mesh Reconstruction 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{kazhdan2006_poisson,
+  title={Poisson surface reconstruction},
+  author={Kazhdan, Michael and Bolitho, Matthew and Hoppe, Hugues},
+  booktitle={Proceedings of the fourth Eurographics symposium on Geometry processing},
+  year={2006}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Environment Matting 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{chen2018tomnet,
+  title={{TOM-Net}: Learning Transparent Object Matting from a Single Image},
+  author={Chen, Guanying and Han, Kai and Wong, Kwan-Yee K.},
+  booktitle=CVPR,
+  pages={9233--9241},
+  year={2018}
+}
+@article{chen2019tom,
+  title={Learning Transparent Object Matting},
+  author={Chen, Guanying and Han, Kai and Wong, Kwan-Yee K},
+  journal=IJCV,
+  volume={127},
+  number={10},
+  pages={1527--1544},
+  year={2019}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. Inpainting 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{yang2021deep,
+  title={Deep Face Video Inpainting via UV Mapping},
+  author={Yang, Wenqi and Chen, Zhenfang and Chen, Chaofeng and Chen, Guanying and Wong, Kwan-Yee K},
+  journal={arXiv preprint arXiv:2109.00681},
+  year={2021}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Sec. BRDF
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{rusinkiewicz1998new,
+  title={A new change of variables for efficient BRDF representation},
+  author={Rusinkiewicz, Szymon M},
+  booktitle={Eurographics Workshop on Rendering Techniques},
+  pages={11--22},
+  year={1998},
+  organization={Springer}
+}
+
+@phdthesis{matusik2003data,
+  title={A data-driven reflectance model},
+  author={Matusik, Wojciech},
+  year={2003},
+  school={Massachusetts Institute of Technology}
+}
+
+@article{hui2016shape,
+  title={Shape and spatially-varying reflectance estimation from virtual exemplars},
+  author={Hui, Zhuo and Sankaranarayanan, Aswin C},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={39},
+  number={10},
+  pages={2060--2073},
+  year={2016},
+  publisher={IEEE}
+}
+
+@inproceedings{yan2012accurate,
+  title={Accurate translucent material rendering under spherical Gaussian lights},
+  author={Yan, Ling-Qi and Zhou, Yahan and Xu, Kun and Wang, Rui},
+  booktitle={Computer Graphics Forum},
+  volume={31},
+  number={7},
+  pages={2267--2276},
+  year={2012},
+  organization={Wiley Online Library}
+}
+
+
+
+@inproceedings{zhang2018unreasonable,
+  title={The unreasonable effectiveness of deep features as a perceptual metric},
+  author={Zhang, Richard and Isola, Phillip and Efros, Alexei A and Shechtman, Eli and Wang, Oliver},
+  booktitle=CVPR,
+  pages={586--595},
+  year={2018}
+}
+
+@article{kuang2022neroic,
+  title={NeROIC: Neural Rendering of Objects from Online Image Collections},
+  author={Kuang, Zhengfei and Olszewski, Kyle and Chai, Menglei and Huang, Zeng and Achlioptas, Panos and Tulyakov, Sergey},
+  journal={arXiv preprint arXiv:2201.02533},
+  year={2022}
+}
+
+

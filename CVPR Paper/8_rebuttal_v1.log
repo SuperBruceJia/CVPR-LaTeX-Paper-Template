@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  30 OCT 2022 11:23
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  30 OCT 2022 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**egrebuttal.tex
-(./egrebuttal.tex
+**8_rebuttal_v1.tex
+(./8_rebuttal_v1.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -422,8 +422,8 @@ LaTeX Font Info:    No file TUptm.fd. on input line 59.
 LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
 (Font)              using `TU/lmr/m/n' instead on input line 59.
 
-(./egrebuttal.aux)
-\openout1 = `egrebuttal.aux'.
+(./8_rebuttal_v1.aux)
+\openout1 = `8_rebuttal_v1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
@@ -436,7 +436,8 @@ LaTeX Font Info:    ... okay on input line 59.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 9.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 59.
@@ -453,7 +454,8 @@ LaTeX Font Info:    ... okay on input line 59.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
 
@@ -513,41 +515,41 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (1.36217pt too wide) in paragraph at lines 74--87
+Overfull \hbox (1.36217pt too wide) in paragraph at lines 77--90
  [][] 
  []
 
 File: example-image.pdf Graphic file (type pdf)
 <use example-image.pdf>
 
-Overfull \hbox (1.35703pt too wide) in paragraph at lines 126--127
+Overfull \hbox (1.35703pt too wide) in paragraph at lines 108--109
  [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for TU+phv on input line 14
+LaTeX Font Info:    Trying to load font information for TU+phv on input line 12
 1.
-LaTeX Font Info:    No file TUphv.fd. on input line 141.
+LaTeX Font Info:    No file TUphv.fd. on input line 121.
 
 LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 141.
+(Font)              using `TU/lmr/m/n' instead on input line 121.
 
 [1
 
 
 ] [2
 
-] (./egrebuttal.aux)
+] (./8_rebuttal_v1.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
  13954 strings out of 476179
- 240281 string characters out of 5809545
- 682855 words of memory out of 5000000
+ 240316 string characters out of 5809545
+ 683855 words of memory out of 5000000
  34533 multiletter control sequences out of 15000+600000
  477185 words of font info for 60 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,10n,90p,342b,390s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,10n,90p,345b,390s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on egrebuttal.pdf (2 pages).
+Output written on 8_rebuttal_v1.pdf (2 pages).

@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Proceedings of the Advances in Neural Information Processing
+  Systems (NeurIPS)}, 2012.
+
+\end{thebibliography}

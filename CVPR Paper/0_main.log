@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  30 OCT 2022 11:23
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.9)  30 OCT 2022 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**egrebuttal.tex
-(./egrebuttal.tex
+**0_main.tex
+(./0_main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -216,53 +216,6 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count290
 \@thisrulewidth=\dimen173
 )
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty
-(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-02-24 L3 programming layer (loader) 
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
-
-(|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count291
-\l__color_backend_stack_int=\count292
-\g__color_backend_stack_int=\count293
-\g__graphics_track_int=\count294
-\l__pdf_internal_box=\box54
-\g__pdf_backend_object_int=\count295
-\g__pdf_backend_annotation_int=\count296
-\g__pdf_backend_link_int=\count297
-))
-Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
-)
-Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count298
-\l__lipsum_a_int=\count299
-\l__lipsum_b_int=\count300
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-(/usr/local/texlive/2022/texmf-dist/tex/latex/blindtext/blindtext.sty
-Package: blindtext 2012/01/06 V2.0 blindtext-Package
-\c@blindtext=\count301
-\c@Blindtext=\count302
-\c@blind@countparstart=\count303
-\blind@countxx=\count304
-\blindtext@numBlindtext=\count305
-\blind@countyy=\count306
-\c@blindlist=\count307
-\c@blindlistlevel=\count308
-\c@blindlist@level=\count309
-\blind@listitem=\count310
-\c@blind@listcount=\count311
-\c@blind@levelcount=\count312
-\blind@mathformula=\count313
-\blind@Mathformula=\count314
-\c@blind@randomcount=\count315
-\c@blind@randommax=\count316
-\c@blind@pangramcount=\count317
-\c@blind@pangrammax=\count318
-)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
 
@@ -305,8 +258,8 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen174
-\Hy@linkcounter=\count319
-\Hy@pagecounter=\count320
+\Hy@linkcounter=\count291
+\Hy@pagecounter=\count292
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
@@ -317,21 +270,20 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count321
+\Hy@SavedSpaceFactor=\count293
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 4018.
 Package hyperref Info: Option `colorlinks' set `true' on input line 4018.
-Package hyperref Info: Option `bookmarks' set `false' on input line 4018.
 Package hyperref Info: Hyper figures OFF on input line 4137.
 Package hyperref Info: Link nesting OFF on input line 4142.
 Package hyperref Info: Hyper index ON on input line 4145.
 Package hyperref Info: Plain pages OFF on input line 4152.
 Package hyperref Info: Backreferencing ON on input line 4155.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks OFF on input line 4396.
+Package hyperref Info: Bookmarks ON on input line 4390.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2021/02/04 v1.41 Bibliographical back referencing
@@ -352,14 +304,14 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 ))
-\c@Hy@tempcnt=\count322
+\c@Hy@tempcnt=\count294
 LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen175
 
 (/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
-\Fld@menulength=\count323
+\Fld@menulength=\count295
 \Field@Width=\dimen176
 \Fld@charsize=\dimen177
 Package hyperref Info: Hyper figures OFF on input line 6027.
@@ -376,9 +328,9 @@ LaTeX Info: Redefining \pageref on input line 6101.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count324
-\c@Item=\count325
-\c@Hfootnote=\count326
+\Hy@abspage=\count296
+\c@Item=\count297
+\c@Hfootnote=\count298
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -389,11 +341,11 @@ File: hxetex.def 2022-02-21 v7.00n Hyperref driver for XeTeX
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box55
-\c@Hy@AnnotLevel=\count327
-\HyField@AnnotCount=\count328
-\Fld@listcount=\count329
-\c@bookmark@seq@number=\count330
+\pdfm@box=\box54
+\c@Hy@AnnotLevel=\count299
+\HyField@AnnotCount=\count300
+\Fld@listcount=\count301
+\c@bookmark@seq@number=\count302
 \Hy@SectionHShift=\skip52
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/cleveref/cleveref.sty
@@ -414,74 +366,125 @@ Package cleveref Info: always capitalise cross-reference names on input line 78
 Package cleveref Info: always capitalise cross-reference names on input line 78
 52.
 )
-LaTeX Font Info:    Trying to load font information for TU+ptm on input line 59
-.
-LaTeX Font Info:    No file TUptm.fd. on input line 59.
-
-
-LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 59.
-
-(./egrebuttal.aux)
-\openout1 = `egrebuttal.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
-9.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: hyperref package is loaded.
-Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
-(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: xetex.def on input line 149.
+Package xcolor Info: Driver file: xetex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
+(/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip53
+\enit@outerparindent=\dimen178
+\enit@toks=\toks30
+\enit@inbox=\box55
+\enit@count@id=\count303
+\enitdp@description=\count304
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-02-24 L3 programming layer (loader) 
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
+
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count305
+\l__color_backend_stack_int=\count306
+\g__color_backend_stack_int=\count307
+\g__graphics_track_int=\count308
+\l__pdf_internal_box=\box56
+\g__pdf_backend_object_int=\count309
+\g__pdf_backend_annotation_int=\count310
+\g__pdf_backend_link_int=\count311
+))
+Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count312
+\l__lipsum_a_int=\count313
+\l__lipsum_b_int=\count314
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+LaTeX Font Info:    Trying to load font information for TU+ptm on input line 83
+.
+LaTeX Font Info:    No file TUptm.fd. on input line 83.
+
+
+LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 83.
+
+(./0_main.aux
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+
+LaTeX Warning: Label `fig:figure3@cref' multiply defined.
+
+)
+\openout1 = `0_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
+3.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2022/texmf-dist/tex/latex/eepic/epic.sty
 Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
-\@@multicnt=\count331
-\d@lta=\count332
-\@delta=\dimen178
-\@@delta=\dimen179
-\@gridcnt=\count333
-\@joinkind=\count334
-\@dotgap=\dimen180
-\@ddotgap=\dimen181
-\@x@diff=\count335
-\@y@diff=\count336
-\x@diff=\dimen182
-\y@diff=\dimen183
-\@dotbox=\box56
-\num@segments=\count337
-\num@segmentsi=\count338
+\@@multicnt=\count315
+\d@lta=\count316
+\@delta=\dimen179
+\@@delta=\dimen180
+\@gridcnt=\count317
+\@joinkind=\count318
+\@dotgap=\dimen181
+\@ddotgap=\dimen182
+\@x@diff=\count319
+\@y@diff=\count320
+\x@diff=\dimen183
+\y@diff=\dimen184
+\@dotbox=\box57
+\num@segments=\count321
+\num@segmentsi=\count322
 \@datafile=\read2
 )
-Package hyperref Info: Link coloring ON on input line 59.
+Package hyperref Info: Link coloring ON on input line 83.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -492,62 +495,122 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count339
+\c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
+ (./0_main.out) (./0_main.out)
+\@outlinefile=\write3
+\openout3 = `0_main.out'.
+
 
 
 LaTeX Font Warning: Font shape `TU/ptm/b/n' undefined
-(Font)              using `TU/ptm/m/n' instead on input line 65.
+(Font)              using `TU/ptm/m/n' instead on input line 104.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
+.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
+.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (1.36217pt too wide) in paragraph at lines 74--87
- [][] 
- []
+(./1_abstract.tex
 
+LaTeX Font Warning: Font shape `TU/ptm/m/it' undefined
+(Font)              using `TU/ptm/m/n' instead on input line 2.
+
+) (./2_intro.tex
 File: example-image.pdf Graphic file (type pdf)
 <use example-image.pdf>
 
-Overfull \hbox (1.35703pt too wide) in paragraph at lines 126--127
+Overfull \hbox (1.35703pt too wide) in paragraph at lines 12--13
  [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for TU+phv on input line 14
-1.
-LaTeX Font Info:    No file TUphv.fd. on input line 141.
+LaTeX Font Info:    Trying to load font information for TU+phv on input line 45
+.
+LaTeX Font Info:    No file TUphv.fd. on input line 45.
 
 LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 141.
+(Font)              using `TU/lmr/m/n' instead on input line 45.
 
 [1
 
 
-] [2
+]) (./3_relatedwork.tex [2]) (./4_method.tex
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
 
-] (./egrebuttal.aux)
+Overfull \hbox (1.35703pt too wide) in paragraph at lines 18--19
+ [][] 
+ []
+
+) (./5_experiments.tex (./tables/two_subtables.tex)
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+File: example-image.pdf Graphic file (type pdf)
+<use example-image.pdf>
+ [3]
+Overfull \hbox (1.36217pt too wide) in paragraph at lines 53--65
+ [][] 
+ []
+
+[4]) (./6_conclusions.tex) [5
+
+] (./0_main.bbl (./0_main.brf)
+\tf@brf=\write4
+\openout4 = `0_main.brf'.
+
+) [6
+
+
+] (./0_main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `0_main.out' has not changed.
+(rerunfilecheck)             Checksum: D299FEA767E9E4F7B8A4385EAE06957E;1215.
+Package rerunfilecheck Info: File `0_main.brf' has not changed.
+(rerunfilecheck)             Checksum: 9EBF4B867ABA3D81BCD1F3C111C50863;216.
  ) 
 Here is how much of TeX's memory you used:
- 13954 strings out of 476179
- 240281 string characters out of 5809545
- 682855 words of memory out of 5000000
- 34533 multiletter control sequences out of 15000+600000
- 477185 words of font info for 60 fonts, out of 8000000 for 9000
+ 14665 strings out of 476179
+ 249857 string characters out of 5809545
+ 669145 words of memory out of 5000000
+ 35204 multiletter control sequences out of 15000+600000
+ 478754 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,10n,90p,342b,390s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,14n,90p,499b,475s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on egrebuttal.pdf (2 pages).
+Output written on 0_main.pdf (6 pages).

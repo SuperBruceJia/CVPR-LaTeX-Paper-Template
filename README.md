@@ -4,4 +4,4 @@
 3. [CVPR Rebuttal](https://github.com/guanyingc/cv_rebuttal_template)
 4. [Tips for Writing a Research Paper using LaTeX](https://github.com/guanyingc/latex_paper_writing_tips)
 
-Date: Oct. 29th, 2022
+Last Update: Oct. 30th, 2022
